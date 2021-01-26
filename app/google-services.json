@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "106933805542",
+    "project_id": "egames-store",
+    "storage_bucket": "egames-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106933805542:android:347f853906a5eccbf2b627",
+        "android_client_info": {
+          "package_name": "com.egames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106933805542-fpguvjnbn9jd4be21j18cdfapi4ubt31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.egames",
+            "certificate_hash": "6a068bb12a243c47361603c36c250a1fc8c7ddaf"
+          }
+        },
+        {
+          "client_id": "106933805542-ci4o65f4t7659rdi2ksnsu215dcrvvp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs9QLO4TK1H5_tM1i5415YLRXLFBBILKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106933805542-ci4o65f4t7659rdi2ksnsu215dcrvvp1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "106933805542-3kc5vale66u6mu8gt10u0jjtbddtac2t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rg.EGames",
+                "app_store_id": "1528944239"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

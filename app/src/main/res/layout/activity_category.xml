@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/colorBlueBase"
+    tools:context=".CategoryActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbar"
+        android:elevation="@dimen/_1sdp"
+        android:gravity="center"
+        app:titleTextColor="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="@dimen/_20sdp"
+                android:tint="@color/white"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"/>
+
+            <com.rginfotech.egames.customviews.CustomTextViewMedium
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_text"
+                android:textAllCaps="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/_13sdp" />
+
+            <LinearLayout
+                android:id="@+id/liner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp">
+                    <ImageView
+                        android:id="@+id/cart_image"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:tint="@color/white"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/cart" />
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|end|top"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"/>
+                </FrameLayout>
+                <ImageView
+                    android:id="@+id/search_image"
+                    android:layout_width="@dimen/_30sdp"
+                    android:tint="@color/white"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/search_30" />
+                <ImageView
+                    android:id="@+id/filter_image"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:tint="@color/white"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:src="@drawable/filter_100" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryLists_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

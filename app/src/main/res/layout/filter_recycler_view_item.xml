@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:background="#696673"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/liner_layout"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/circle_gry_background">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/no_img"
+                app:civ_border_color="@color/light_gry" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:fontFamily="@font/futuralight"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:text="@string/brands"
+            android:textColor="@color/light_gry"
+            android:textSize="@dimen/_13sdp"/>
+    </LinearLayout>
+</RelativeLayout>

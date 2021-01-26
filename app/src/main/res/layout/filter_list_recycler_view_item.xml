@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/list_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futuralight"
+            android:text="Glass"
+            android:textColor="@color/light_gry"
+            android:textSize="@dimen/_12sdp"/>
+        <LinearLayout
+            android:id="@+id/liner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:fontFamily="@font/futuralight"
+                android:background="@drawable/drawable_checkbox_selector"
+                android:button="@null"
+                android:backgroundTint="#696673"
+                android:textColor="@color/black" />
+
+
+            <ImageView
+                android:id="@+id/check_iv"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:fontFamily="@font/futuralight"
+                android:src="@drawable/ic_brand_ltr"
+                android:button="@null"
+                android:tint="#696673"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:progressDrawable="@drawable/custom_ratingbar_selector"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="0" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/light_gry"
+        android:layout_below="@+id/relativeLayout"/>
+</LinearLayout>

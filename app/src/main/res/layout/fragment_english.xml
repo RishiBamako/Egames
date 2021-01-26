@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.EnglishFragment">
+    <ListView
+        android:id="@+id/listView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_above="@+id/applay_button"/>
+
+    <!--<pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:src="@drawable/loader_spinner" />-->
+    <Button
+        android:id="@+id/applay_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/futuramediumbt"
+        android:background="@drawable/round_button"
+        android:text="@string/apply_button"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"/>
+
+</RelativeLayout>

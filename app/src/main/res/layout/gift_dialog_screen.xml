@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:alpha="0.1"/>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_margin="@dimen/_10sdp">
+            <LinearLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:background="@color/select_item_color">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:id="@+id/text_dialog"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:textAllCaps="true"
+                    android:textAlignment="viewStart"
+                    android:text="@string/select_gift"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/step_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:text="@string/step"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gift_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frame_layout"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gift_recycler_view"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="@drawable/round_button"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:textColor="@color/white"
+                    android:text="@string/done"
+                    android:textSize="@dimen/_10sdp"/>
+                <Button
+                    android:id="@+id/btn_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/round_button"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:textColor="@color/white"
+                    android:text="@string/skip"
+                    android:textSize="@dimen/_10sdp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/gift_circle_view"
+            android:fontFamily="@font/futuramediumbt"
+            android:gravity="center"
+            android:text="X"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"/>
+    </FrameLayout>
+
+</LinearLayout>

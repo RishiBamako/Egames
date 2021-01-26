@@ -1,0 +1,536 @@
+package com.rginfotech.egames.fragment;
+
+import android.app.Dialog;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.rginfotech.egames.CategoryActivity;
+import com.rginfotech.egames.FilterActivity;
+import com.rginfotech.egames.ProductDetailsActivity;
+import com.rginfotech.egames.R;
+import com.rginfotech.egames.SearchResultsActivity;
+import com.rginfotech.egames.UserCartActivity;
+import com.rginfotech.egames.WishListActivity;
+import com.rginfotech.egames.adapter.BrandListOfCategoryAdapter;
+import com.rginfotech.egames.adapter.CategoryAdapter;
+import com.rginfotech.egames.api.API;
+import com.rginfotech.egames.model.BrandListOfCategory;
+import com.rginfotech.egames.model.CategoryList;
+import com.rginfotech.egames.model.ProductList;
+import com.rginfotech.egames.model.ProductSearchModel;
+import com.rginfotech.egames.utility.CommanClass;
+import com.rginfotech.egames.utility.CommanMethod;
+import com.rginfotech.egames.utility.SessionManager;
+import com.rginfotech.egames.utility.Utils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class CategoryFragment  extends Fragment implements View.OnClickListener {
+
+    private RecyclerView categoryLists_recycler;
+    //private GifImageView gifImageView;
+    private List<CategoryList> categoryLists;
+    private CategoryAdapter categoryAdapter;
+    private ImageView cart_image;
+    private TextView number;
+    private int total_value;
+    private String total_count="";
+    private SessionManager sessionManager;
+    private ImageView filter_image;
+    private Dialog dialog;
+    private List<ProductSearchModel> productLists;
+    private ArrayAdapter<ProductSearchModel> searchadapter;
+    private ArrayList<ProductList> array_of_product_lists;
+    private String search_text="";
+    private ImageView search_image;
+    private ImageView back_image;
+    private LinearLayout liner;
+    private AutoCompleteTextView searchView;
+    public CategoryFragment() {
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.activity_category, container, false);
+        sessionManager = new SessionManager(getContext());
+        sessionManager = new SessionManager(getActivity());
+        view.findViewById(R.id.back_image).setOnClickListener(this);
+        categoryLists_recycler = view.findViewById(R.id.categoryLists_recycler);
+        //gifImageView = (GifImageView)findViewById(R.id.gifImageView);
+        cart_image = view.findViewById(R.id.cart_image);
+        view.findViewById(R.id.cart_image).setOnClickListener(this);
+        number = view.findViewById(R.id.number);
+        view.findViewById(R.id.filter_image).setOnClickListener(this);
+        view.findViewById(R.id.search_image).setOnClickListener(this);
+        back_image = view.findViewById(R.id.back_image);
+        liner = view.findViewById(R.id.liner);
+        if(getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_LTR){
+            back_image.setImageResource(R.drawable.arrow_30);
+            liner.setGravity(Gravity.END);
+        }else{
+            back_image.setImageResource(R.drawable.arrow_right_30);
+            liner.setGravity(Gravity.START);
+        }
+        if (CommanMethod.isInternetConnected(getActivity())){
+            getCategoryList();
+            CommanClass.getCartValue(getActivity(), number);
+            //searchProduct();
+        }
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.back_image:
+                getActivity().onBackPressed();
+                break;
+            case R.id.cart_image:
+                Intent intent = new Intent(getActivity(), UserCartActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.filter_image:
+                Intent intent1 = new Intent(getActivity(), FilterActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.search_image:
+                sortDialog();
+                break;
+        }
+    }
+
+    private void getCategoryList(){
+        final Dialog dialog = CommanMethod.getProgressDialogForFragment(getActivity());
+        dialog.show();
+        RequestQueue mRequestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL+"categorylist", new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    dialog.dismiss();
+                    categoryLists = new ArrayList<>();
+                    JSONObject object = new JSONObject(response);
+                    String status = object.getString("status");
+                    if(status.equals("success")){
+                        JSONObject jsonObject = new JSONObject(object.getString("response"));
+                        JSONObject jsonObject1 = new JSONObject(jsonObject.getString("category_Array"));
+                        JSONArray jsonArray = new JSONArray(jsonObject1.getString("category_list"));
+                        for(int i=0;i<jsonArray.length();i++){
+                            JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+                            CategoryList categoryList = new CategoryList();
+                            categoryList.setId(jsonObject2.getString("id"));
+                            categoryList.setName(jsonObject2.getString("name"));
+                            categoryList.setName_ar(jsonObject2.getString("name_ar"));
+                            categoryList.setSlug(jsonObject2.getString("slug"));
+                            categoryList.setCategory_image(API.CategoryURL+jsonObject2.getString("category_image"));
+                            categoryList.setCategory_parent(jsonObject2.getString("category_parent"));
+                            categoryList.setParent_id(jsonObject2.getString("parent_id"));
+                            categoryList.setUi_order(jsonObject2.getString("ui_order"));
+                            categoryList.setCreated_at(jsonObject2.getString("created_at"));
+                            categoryList.setUpdated_at(jsonObject2.getString("updated_at"));
+                            categoryList.setStatus(jsonObject2.getString("status"));
+                            categoryList.setCat_type(jsonObject2.getString("cat_type"));
+
+                            categoryLists.add(categoryList);
+                        }
+                    }else{
+                        //Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                }catch (JSONException e){
+                    e.printStackTrace();
+                    dialog.dismiss();
+                }
+
+
+                //GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),1);
+                categoryLists_recycler.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
+                categoryAdapter = new CategoryAdapter(getActivity(),categoryLists);
+                categoryLists_recycler.setAdapter(categoryAdapter);
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                dialog.dismiss();
+            }
+        });
+
+        mStringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+        mRequestQueue.add(mStringRequest);
+    }
+
+    public void getCartValue(){
+        RequestQueue mRequestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL+"usercart", new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject object = new JSONObject(response);
+                    String status = object.getString("status");
+                    if(status.equals("success")){
+                        JSONObject jsonObject=new JSONObject(object.getString("response"));
+                        JSONObject jsonObject1 = new JSONObject(jsonObject.getString("usercart_Array"));
+                        JSONArray jsonArray = new JSONArray(jsonObject1.getString("usercart"));
+                        if(jsonArray.length()> 0) {
+                            total_value = jsonArray.length();
+                            total_count = String.valueOf(total_value);
+                            number.setText(total_count);
+                        }else {
+                            number.setText("");
+                        }
+                    }else{
+                        //Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                    }
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                if(!sessionManager.getUserEmail().isEmpty() && !sessionManager.getUserPassword().isEmpty()){
+                    params.put("user_id", sessionManager.getUserId());
+                }else{
+                    params.put("user_id", sessionManager.getRandomValue());
+                }
+                return params;
+            }
+        };
+
+        mStringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+        mRequestQueue.add(mStringRequest);
+    }
+
+    private void sortDialog(){
+        dialog = new Dialog(getActivity(),android.R.style.Theme_Translucent_NoTitleBar);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.search_dialog_box);
+        ImageView dialog_back_image = (ImageView)dialog.findViewById(R.id.dialog_back_image);
+        searchView = (AutoCompleteTextView)dialog.findViewById(R.id.searchView);
+        Button search_button = (Button)dialog.findViewById(R.id.search_button);
+
+        productLists = new ArrayList<>();
+        searchView.setDropDownBackgroundResource(R.color.white);
+        searchView.setDropDownWidth(getResources().getDisplayMetrics().widthPixels);
+
+        if(getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_LTR){
+            dialog_back_image.setImageResource(R.drawable.arrow_30);
+        }else{
+            dialog_back_image.setImageResource(R.drawable.arrow_right_30);
+        }
+        searchView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                System.out.println("before");
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                System.out.println("start");
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                System.out.println("change"+s);
+                search_text = s.toString();
+                if (CommanMethod.isInternetConnected(getActivity())){
+                    searchProduct(search_text);
+                }
+            }
+        });
+
+        searchView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                array_of_product_lists = new ArrayList<>();
+                ProductList productList = new ProductList();
+                productList.setId(searchadapter.getItem(position).getId());
+                productList.setQuantity(searchadapter.getItem(position).getQuantity());
+                productList.setUser_id(searchadapter.getItem(position).getUser_id());
+                productList.setCate_id(searchadapter.getItem(position).getCate_id());
+                productList.setCate_name(searchadapter.getItem(position).getCate_name());
+                productList.setTitle(searchadapter.getItem(position).getTitle());
+                productList.setDescription(searchadapter.getItem(position).getDescription());
+                productList.setProduct_image(searchadapter.getItem(position).getProduct_image());
+                productList.setProduct_images(searchadapter.getItem(position).getProduct_images());
+                productList.setModel_no(searchadapter.getItem(position).getModel_no());
+                productList.setSku_code(searchadapter.getItem(position).getSku_code());
+                productList.setPrice(searchadapter.getItem(position).getPrice());
+                productList.setCurrent_currency(searchadapter.getItem(position).getCurrent_currency());
+                productList.setSale_price(searchadapter.getItem(position).getSale_price());
+                productList.setNegotiable(searchadapter.getItem(position).getNegotiable());
+                productList.setBrand_name(searchadapter.getItem(position).getBrand_name());
+                productList.setBrand_id(searchadapter.getItem(position).getBrand_id());
+                productList.setVariation_color(searchadapter.getItem(position).getVariation_color());
+                productList.setTags(searchadapter.getItem(position).getTags());
+                productList.setIs_hide(searchadapter.getItem(position).getIs_hide());
+                productList.setReviewed(searchadapter.getItem(position).getReviewed());
+                productList.setFeatured(searchadapter.getItem(position).getFeatured());
+                productList.setArchived(searchadapter.getItem(position).getArchived());
+                productList.setStatus(searchadapter.getItem(position).getStatus());
+                productList.setStock_flag(searchadapter.getItem(position).getStock_flag());
+                productList.setRating(searchadapter.getItem(position).getRating());
+                productList.setReplacement(searchadapter.getItem(position).getReplacement());
+                productList.setReleted_product(searchadapter.getItem(position).getReleted_product());
+                productList.setOffer_id(searchadapter.getItem(position).getOffer_id());
+                productList.setOffer_name(searchadapter.getItem(position).getOffer_name());
+                array_of_product_lists.add(productList);
+
+                /*Intent intent = new Intent(CategoryActivity.this,SearchResultsActivity.class);
+                intent.putExtra("array_of_product_lists",array_of_product_lists);
+                startActivity(intent);*/
+                Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+                intent.putExtra("product_id",searchadapter.getItem(position).getId());
+                intent.putExtra("current_currency",searchadapter.getItem(position).getCurrent_currency());
+                intent.putExtra("title_name",searchadapter.getItem(position).getTitle());
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                searchView.getText().clear();
+                Utils.hideKeyBoard(getActivity(),searchView);
+            }
+
+        });
+        dialog_back_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                array_of_product_lists = new ArrayList<>();
+                String getSearchText = searchView.getText().toString();
+                if(getSearchText.equals("") || getSearchText.length()==0){
+                }else {
+                    search_text=getSearchText;
+                    for(int i=0;i<productLists.size();i++){
+                        ProductList productList = new ProductList();
+                        productList.setId(productLists.get(i).getId());
+                        productList.setQuantity(productLists.get(i).getQuantity());
+                        productList.setUser_id(productLists.get(i).getUser_id());
+                        productList.setCate_id(productLists.get(i).getCate_id());
+                        productList.setCate_name(productLists.get(i).getCate_name());
+                        productList.setTitle(productLists.get(i).getTitle());
+                        productList.setDescription(productLists.get(i).getDescription());
+                        productList.setProduct_image(productLists.get(i).getProduct_image());
+                        productList.setProduct_images(productLists.get(i).getProduct_images());
+                        productList.setModel_no(productLists.get(i).getModel_no());
+                        productList.setSku_code(productLists.get(i).getSku_code());
+                        productList.setPrice(productLists.get(i).getPrice());
+                        productList.setCurrent_currency(productLists.get(i).getCurrent_currency());
+                        productList.setSale_price(productLists.get(i).getSale_price());
+                        productList.setNegotiable(productLists.get(i).getNegotiable());
+                        productList.setBrand_name(productLists.get(i).getBrand_name());
+                        productList.setBrand_id(productLists.get(i).getBrand_id());
+                        productList.setVariation_color(productLists.get(i).getVariation_color());
+                        productList.setTags(productLists.get(i).getTags());
+                        productList.setIs_hide(productLists.get(i).getIs_hide());
+                        productList.setReviewed(productLists.get(i).getReviewed());
+                        productList.setFeatured(productLists.get(i).getFeatured());
+                        productList.setArchived(productLists.get(i).getArchived());
+                        productList.setStatus(productLists.get(i).getStatus());
+                        productList.setStock_flag(productLists.get(i).getStock_flag());
+                        productList.setRating(productLists.get(i).getRating());
+                        productList.setReplacement(productLists.get(i).getReplacement());
+                        productList.setReleted_product(productLists.get(i).getReleted_product());
+                        productList.setOffer_id(productLists.get(i).getOffer_id());
+                        productList.setOffer_name(productLists.get(i).getOffer_name());
+                        array_of_product_lists.add(productList);
+                    }
+                    Intent intent = new Intent(getActivity(), SearchResultsActivity.class);
+                    intent.putExtra("array_of_product_lists",array_of_product_lists);
+                    intent.putExtra("search_string", search_text);
+                    startActivity(intent);
+                }
+            }
+        });
+        dialog.show();
+    }
+
+    private void searchProduct(String search_text){
+
+        RequestQueue mRequestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL+"productlist_of_brand", new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+
+                    JSONObject object = new JSONObject(response);
+                    String status = object.getString("status");
+                    if(status.equals("success")){
+                        productLists.clear();
+                        JSONObject jsonObject = new JSONObject(object.getString("response"));
+                        JSONObject jsonObject1 = new JSONObject(jsonObject.getString("product_list_Array"));
+                        JSONArray jsonArray = new JSONArray(jsonObject1.getString("product_list"));
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+                            ProductSearchModel productList = new ProductSearchModel();
+                            productList.setId(jsonObject2.getString("id"));
+                            productList.setQuantity(jsonObject2.getString("quantity"));
+                            productList.setUser_id(jsonObject2.getString("user_id"));
+                            productList.setCate_id(jsonObject2.getString("cate_id"));
+                            productList.setCate_name(jsonObject2.getString("cate_name"));
+                            productList.setTitle(jsonObject2.getString("title"));
+                            productList.setDescription(jsonObject2.getString("description"));
+                            productList.setProduct_image(API.ProductURL+jsonObject2.getString("product_image"));
+                            productList.setProduct_images(jsonObject2.getString("product_images"));
+                            productList.setModel_no(jsonObject2.getString("model_no"));
+                            productList.setSku_code(jsonObject2.getString("sku_code"));
+                            productList.setPrice(jsonObject2.getString("price"));
+                            productList.setCurrent_currency(jsonObject2.getString("current_currency"));
+                            //productList.setSale_price(jsonObject2.getString("sale_price"));
+                            productList.setNegotiable(jsonObject2.getString("negotiable"));
+                            productList.setBrand_name(jsonObject2.getString("brand_name"));
+                            productList.setBrand_id(jsonObject2.getString("brand_id"));
+                            productList.setVariation_color(jsonObject2.getString("variation_color"));
+                            productList.setTags(jsonObject2.getString("tags"));
+                            productList.setIs_hide(jsonObject2.getString("is_hide"));
+                            productList.setReviewed(jsonObject2.getString("reviewed"));
+                            productList.setFeatured(jsonObject2.getString("featured"));
+                            productList.setArchived(jsonObject2.getString("archived"));
+                            productList.setDeleted_at(jsonObject2.getString("deleted_at"));
+                            productList.setStatus(jsonObject2.getString("status"));
+                            productList.setStock_flag(jsonObject2.getString("stock_flag"));
+                            productList.setRating(jsonObject2.getString("rating"));
+                            productList.setReplacement(jsonObject2.getString("replacement"));
+                            productList.setReleted_product(jsonObject2.getString("releted_product"));
+                            productList.setOffer_id(jsonObject2.getString("offer_id"));
+                            productList.setOffer_name(jsonObject2.getString("offer_name"));
+
+                            productLists.add(productList);
+
+                        }
+                    }else{
+                        //Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                }catch (JSONException e){
+                    e.printStackTrace();
+                }
+                searchadapter= new ArrayAdapter<ProductSearchModel>(getActivity(),android.R.layout.simple_list_item_1, productLists);
+                searchView.setAdapter(searchadapter);
+               // searchView.showDropDown();
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("search_text", search_text);
+                return params;
+            }
+        };
+
+        mStringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+        mRequestQueue.add(mStringRequest);
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (CommanMethod.isInternetConnected(getActivity())){
+            CommanClass.getCartValue(getActivity(), number);
+        }
+    }
+}

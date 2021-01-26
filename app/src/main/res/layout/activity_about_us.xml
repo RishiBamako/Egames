@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueBase"
+    tools:context=".AboutUsActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbar"
+        android:gravity="center"
+        android:elevation="@dimen/_1sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingStart="@dimen/_10sdp">
+            <ImageView
+                android:id="@+id/back_image"
+                android:tint="@color/white"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"/>
+
+        <com.rginfotech.egames.customviews.CustomTextViewMedium
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/about_us_title_text_view"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:textAllCaps="false"/>
+        <LinearLayout
+            android:id="@+id/liner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp">
+        <ImageView
+            android:id="@+id/cart_image"
+            android:layout_width="@dimen/_30sdp"
+            android:tint="@color/white"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/cart" />
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|end|top"
+                android:fontFamily="@font/futuramediumbt"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"/>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/search_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:tint="@color/white"
+            android:src="@drawable/search_30" />
+            <ImageView
+                android:id="@+id/filter_image"
+                android:layout_width="@dimen/_25sdp"
+                android:tint="@color/white"
+                android:layout_height="@dimen/_20sdp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/filter_100" />
+        </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="@dimen/_10sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.rginfotech.egames.customviews.CustomTextViewMedium
+                android:id="@+id/about_us_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dimgray"
+                android:textSize="@dimen/_10sdp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </ScrollView>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:visibility="visible"
+        android:src="@drawable/loader_spinner" />
+</RelativeLayout>

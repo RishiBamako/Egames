@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="@dimen/_150sdp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/item_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:fontFamily="@font/futuraboldfont"
+            android:layout_gravity="center"
+            android:text="Are you sure to delete this item from bag?"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/dark_gry"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/continue_text_view"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/futuramediumbt"
+                android:gravity="center"
+                android:text="YES"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"/>
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@color/dark_gry"/>
+            <TextView
+                android:id="@+id/go_to_text_view"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/futuramediumbt"
+                android:gravity="center"
+                android:text="NO"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

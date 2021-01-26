@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">E-Games Store</string>
+    <string name="internet_error">خطأ في الإتصال بالإنترنت!</string>
+    <string name="share_with">شارك مع</string>
+    <string name="hello">مرحبا،</string>
+    <string name="order_place">تم تنفيذ الطلب بنجاح.</string>
+    <string name="ok">نعم</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+
+    <!-- TODO: MyOrder Screen Screen -->
+    <string name="my_order_title">طلبي</string>
+    <string name="order_id">رقم الطلب</string>
+    <string name="offerpricedot">سعر العرض : </string>
+    <string name="order_qty">كمية</string>
+    <string name="date">التاريخ</string>
+    <string name="view_details">عرض التفاصيل</string>
+    <string name="order_status">الحالة</string>
+    <string name="feed_back">إقتراحات</string>
+    <string name="track_order">تعقب الطلب</string>
+    <string name="my_orders">طلباتي</string>
+    <string name="add_review">اضف تقييم</string>
+    <string name="comment">التعليقات</string>
+    <string name="submit_btn">تقديم</string>
+    <string name="close_btn">إغلاق</string>
+    <string name="not_order_alert">لم يتم شحن الطلب بعد</string>
+    <string name="your_name">الإسم</string>
+    <string name="enter_name">الرجاء إدخال الإسم</string>
+    <string name="comment_message">من فضلك أدخل الرسالة</string>
+    <string name="order_details">تفاصيل الطلب</string>
+    <string name="done_btn">تم</string>
+    <string name="product_name">إسم المنتج</string>
+    <string name="gift_name">إسم الهدية</string>
+    <string name="order">رقم الطلب</string>
+    <string name="delivery_charge">رسوم التوصيل</string>
+    <string name="price">السعر</string>
+    <string name="grand_total">المجموع الكلي</string>
+    <string name="quantity">كمية</string>
+    <string name="left_eye">قوة نظر العين اليسار</string>
+    <string name="right_eye">قوة نظر العين اليمين</string>
+    <string name="payment_mode">طريقة الدفع</string>
+    <string name="di_full_name">الإسم الكامل</string>
+    <string name="di_area">منطقة</string>
+    <string name="di_block">قطعة</string>
+    <string name="di_street">شارع</string>
+    <string name="di_house">منزل / مبنى</string>
+    <string name="di_flat">شقة</string>
+    <string name="di_phone">رقم الهاتف</string>
+    <string name="order_date">تاريخ الطلب</string>
+    <string name="di_order_status">حالة الطلب</string>
+    <string name="payment_status">حالة الدفع</string>
+    <string name="free_qty">كمية مجانية</string>
+    <string name="di_color">اللون</string>
+    <string name="not_availabel">غير متوفر حاليا</string>
+    <string name="ship_address">عنوان الشحن</string>
+    <string name="di_paci"> الرقم الآلي</string>
+    <string name="di_comment">تعليقات</string>
+    <string name="current_location">الموقع الحالي</string>
+    <string name="coupon_code">رمز الكوبون</string>
+    <string name="coupon_price">سعر الكوبون</string>
+    <string name="free_quantity">كمية مجانية</string>
+    <string name="offer_name">إسم العرض</string>
+    <string name="loyal_point">نقاطك المتاحة</string>
+    <string name="get">احصل على</string>
+    <string name="get_point">نقاط الولاء بعد الدفع</string>
+    <string name="paid">نقاط الولاء المدفوعة</string>
+    <string name="pty_success">نجاحه</string>
+
+
+    <string name="please_select_payment_method">Please Select Payment Method:</string>
+    <string name="please_enter_payment_amount">Please Enter Payment Amount:</string>
+    <string name="todo">TODO</string>
+    <string name="amount">0.100</string>
+
+    <!-- TODO: Home Screen -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="home_title">اتصل بنا</string>
+    <string name="title_home">الصفحة الرئيسية</string>
+    <string name="navigation_favourite">الأمنيات</string>
+    <string name="navigation_offers">عروض</string>
+    <string name="navigation_my_accout">حسابي</string>
+    <string name="navigation_search">بحث</string>
+    <string name="navigation_contact">اتصل بنا</string>
+    <string name="nav_header">دخول / تسجيل جديد</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="office">مكتب. مقر. مركز</string>
+    <string name="other">آخر</string>
+    <string name="country">البلد</string>
+    <string name="please_select_addresstype">الرجاء تحديد نوع العنوان</string>
+
+    <string name="language">اللغة</string>
+    <string name="category">الفئة</string>
+    <string name="term_and_condition">الشروط و الأحكام</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="faq">الأسئلة الشائعة</string>
+    <string name="rate">قيمنا</string>
+    <string name="sign_out">خروج</string>
+    <string name="lan_yes">YES</string>
+    <string name="lan_no">NO</string>
+    <string name="lan_message">Do you really want to change language?</string>
+    <string name="lan_alert">ALERT</string>
+
+    <!-- TODO: Country Screen -->
+    <string name="select_language">اختر اللغة</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="select_country">اختر البلد</string>
+    <string name="apply_button">Apply</string>
+    <string name="arabic_apply_button">تطبيق</string>
+
+    <!-- TODO: Category Screen -->
+    <string name="category_text">الأقسام</string>
+
+    <!-- TODO: TermsAndConditions Screen -->
+    <string name="title_text_view">الشروط و الأحكام</string>
+
+    <!-- TODO: AboutUs Screen -->
+    <string name="about_us_title_text_view">معلومات عنا</string>
+
+    <!-- TODO: LoyaltyPoint Screen -->
+    <string name="loyalty_title_text_view">نقاطك</string>
+    <string name="loyalty_point">نقاطك المتاحة</string>
+    <string name="loyalty_point_need">تحتاج الحد الأدنى</string>
+    <string name="loyalty_point_for">نقطة لشراء المنتجات بالنقاط.</string>
+
+    <!-- TODO: FAQ Screen -->
+    <string name="faq_title_text_view">أسئلة شائعة</string>
+
+    <!-- TODO: AddNewAddress Screen -->
+    <string name="add_new_address_title_text_view">الدفع</string>
+    <string name="shipping_address">عنوان الشحن</string>
+    <string name="step2">الخطوة 2/4</string>
+    <string name="new_address">عنوان جديد</string>
+    <string name="share_location">مشاركة الموقع</string>
+    <string name="full_name">الإسم الكامل </string>
+    <string name="full_name_hint">أدخل الإسم بالكامل</string>
+    <string name="current">الحالي </string>
+    <string name="current_location_hint">الموقع الحالي</string>
+    <string name="current_lat">خط العرض الحالي </string>
+    <string name="current_lat_hint">خط العرض الحالي</string>
+    <string name="current_long">خط الطول الحالي </string>
+    <string name="current_long_hint">خط الطول الحالي</string>
+    <string name="area">منطقة </string>
+    <string name="area_hint">منطقة</string>
+    <string name="block">قطعة *</string>
+    <string name="block_hint">قطعة</string>
+    <string name="street">شارع </string>
+    <string name="street_hint">شارع</string>
+    <string name="avenue">جادة</string>
+    <string name="avenue_hint">جادة</string>
+    <string name="house">بناء / منزل </string>
+    <string name="house_hint">بناء/ منزل</string>
+    <string name="floor">رقم الدور</string>
+    <string name="floor_hint">رقم الدور</string>
+    <string name="flat">شقة</string>
+    <string name="flat_hint">شقة</string>
+    <string name="phone_number">رقم الهاتف *</string>
+    <string name="phone_number_hint">رقم الهاتف</string>
+    <string name="paci_number">الرقم الآلي</string>
+    <string name="paci_number_hint">الرقم الآلي</string>
+    <string name="comments">تعليقات</string>
+    <string name="comments_hint">تعليقات</string>
+    <string name="save_address">حفظ العنوان</string>
+    <string name="toast_message_name">من فضلك أدخل الإسم</string>
+    <string name="toast_massage_mobile">الرجاء إدخال رقم الجوال بالتنسيق الصحيح</string>
+    <string name="toast_message_area">الرجاء إدخال إسم المنطقة</string>
+    <string name="toast_message_block">يرجى إدخال رقم القطعة</string>
+    <string name="toast_message_street">الرجاء إدخال الشارع</string>
+    <string name="toast_message_house">الرجاء إدخال رقم المنزل</string>
+    <string name="toast_floor">الرجاء إدخال رقم الدور</string>
+    <string name="toast_flat">الرجاء إدخال رقم الشقة</string>
+    <string name="update_address">تحديث العنوان</string>
+
+    <!-- TODO: BrandList Screen -->
+    <string name="title_brand">العلامات التجارية</string>
+
+    <!-- TODO: ChangePassword Screen -->
+    <string name="change_password_title">تغيير كلمة المرور</string>
+    <string name="old_password">كلمة مرور قديمة*</string>
+    <string name="new_password">كلمة مرور جديدة*</string>
+    <string name="confirm_password">تأكيد كلمة المرور الجديدة*</string>
+    <string name="update_button">تحديث</string>
+    <string name="toast_message_old_pass">الرجاء إدخال كلمة المرور القديمة</string>
+    <string name="toast_message_new_pass">الرجاء إدخال كلمة مرور جديدة</string>
+    <string name="toast_message_con_pass">الرجاء تأكيد كلمة المرور</string>
+    <string name="toast_message_not_match">كلمة المرور غير متطابقة!</string>
+
+    <!-- TODO: CheckOut Screen -->
+    <string name="check_out_title">الدفع</string>
+    <string name="edit_devivery_address">تحرير عنوان التسليم</string>
+    <string name="check_out_shipping_address">عنوان الشحن</string>
+    <string name="check_out_step">الخطوة 2/4</string>
+    <string name="check_out_new_address">إضافة عنوان جديد</string>
+    <string name="check_out_sub_total">المجموع الفرعي:</string>
+    <string name="continue_to_payment">الاستمرار في الدفع</string>
+    <string name="alert_message">تنبيه</string>
+    <string name="select_any_one_address">يرجى اختيار العنوان أو إضافة عنوان جديد</string>
+
+    <!-- TODO: Collection Screen -->
+    <string name="collection_title">مجموعات</string>
+
+    <!-- TODO: EditProfile Screen -->
+    <string name="edit_profile_title">تعديل الحساب</string>
+    <string name="name_hint">إسم</string>
+    <string name="email_hint">البريد الإلكتروني</string>
+    <string name="number">رقم</string>
+    <string name="dateofbirth">تاريخ الولادة</string>
+    <string name="profile_update_button">تحديث</string>
+    <string name="cancle">إلغاء</string>
+    <string name="dialog_select_country">اختر البلد....</string>
+    <string name="toast_message_profile_name">من فضلك أدخل الاسم</string>
+    <string name="toast_message_country_code">يرجى إختيار رمز البلد</string>
+    <string name="toast_message_number">الرجاء إدخال الرقم</string>
+
+    <!-- TODO: Filter Screen -->
+    <string name="filter_title">فلتر</string>
+    <string name="clear_all">إمسح الكل</string>
+    <string name="apply_filter_button">إظهار النتائج </string>
+
+    <!-- TODO: ForgotPassword Screen -->
+    <string name="reset_pass">لإعادة تعيين كلمة المرور الخاصة بك ، أدخل عنوان البريد الإلكتروني الذي تستخدمه لتسجيل الدخول إلى إيجاميس</string>
+    <string name="email_id_hint">أدخل البريد الإلكتروني</string>
+    <string name="reset_password_button">إعادة تعيين كلمة المرور</string>
+    <string name="toast_message_forgot_email">الرجاء إدخال البريد الإلكتروني</string>
+    <string name="release">إطلاق سراح</string>
+    <string name="new_string">جديد</string>
+
+    <!-- TODO: Login Screen -->
+    <string name="login_title">تسجيل الدخول</string>
+    <string name="login_email_hint">البريد الإلكتروني</string>
+    <string name="login_pass_hint">كلمة المرور</string>
+    <string name="forgot_pass_text">نسيت كلمة المرور؟</string>
+    <string name="forgot_login">تسجيل الدخول</string>
+    <string name="existing_user">مستخدم موجود</string>
+    <string name="guest_user">حساب زائر</string>
+    <string name="login_as_guest">الاستمرار كزائر</string>
+    <string name="forgot_account">ليس لديك حساب !</string>
+    <string name="account"> <u>إنشاء حساب جديد.</u></string>
+    <string name="toast_message_login_email">الرجاء إدخال البريد الإلكتروني</string>
+    <string name="toast_message_login_invalid">البريد الإلكتروني الخاص بك غير صالح</string>
+    <string name="toast_message_login_pass">الرجاء إدخال كلمة المرور</string>
+    <string name="create_account">انشاء حساب جديد</string>
+    <string name="login_account">تسجيل الدخول</string>
+
+    <!-- TODO: Payment Screen -->
+    <string name="payment_title">دفع</string>
+    <string name="payment_option">خيارات الدفع</string>
+    <string name="payment_step">الخطوة 4/4</string>
+    <string name="payment_sub_total">المجموع الفرعي :</string>
+    <string name="payment_delivery_charge">رسوم التوصيل:</string>
+    <string name="payment_grand_total">المجموع الكلي :</string>
+    <string name="total">المجموع </string>
+    <string name="totaldash">المجموع :</string>
+    <string name="pay_now">إدفع الآن</string>
+    <string name="show_shipping_address">عرض عنوان الشحن</string>
+    <string name="payment_dialog_alert">تنبيه</string>
+    <string name="payment_dialog_option">الرجاء إختيار طريقة الدفع</string>
+    <string name="cannot_getting_payment">دفع غير صحيح</string>
+
+    <!-- TODO: PaymentCommant Screen -->
+    <string name="payment_comman_title">دفع</string>
+    <!-- TODO: ProductDetails Screen -->
+    <string name="review_text">تأكيد</string>
+    <string name="offer_text_view">@string/navigation_offers</string>
+    <string name="qty">كمية</string>
+    <string name="left_qty">الكمية للعين اليسار</string>
+    <string name="right_qty">الكمية للعين اليمين</string>
+    <string name="select_power">اختر درجة النظر</string>
+    <string name="left_lense_price">سعر العدسة اليسار</string>
+    <string name="right_lense_price">سعر العدسة اليمين</string>
+    <string name="left_eye_power">قوة العين اليسار:</string>
+    <string name="right_eye_power"> قوة العين اليمين:</string>
+    <string name="related_product">منتجات ذات صلة</string>
+    <string name="wishlist">قائمة الرغبات</string>
+    <string name="payment_option_text">المنتجات التي لديك في عربة التسوق لا تتطلب التسليم ، يمكن مشاركة الرموز على whatsapp</string>
+    <string name="mywishlist">قائمة امنياتي</string>
+    <string name="remove_wishlist">إزالة من قائمة أمنياتي</string>
+    <string name="sharecodeonwhatsapp">شارك الكود على Whatsapp</string>
+    <string name="pleasedeliverit">الرجاء توصيلها</string>
+    <string name="add_to_bag">أضف الى الحقيبة</string>
+    <string name="select_power_dialog">اختر درجة النظر</string>
+    <string name="left_eye_text_dialog">العين اليسار:</string>
+    <string name="right_eye_text_dialog">العين اليمين:</string>
+    <string name="done_dialog_button">تم</string>
+    <string name="product_code">رمز المنتج</string>
+
+    <!-- TODO: ProductList Screen -->
+    <string name="sort">فرز</string>
+    <string name="filter">فلتر</string>
+    <string name="product_not_available">لم يتم العثور على المنتج</string>
+
+    <!-- TODO: Register Screen -->
+    <string name="register_title">تسجيل</string>
+    <string name="register_name_hint">إسم*</string>
+    <string name="register_email_hint">البريد الإلكتروني*</string>
+    <string name="register_number">الجوال*</string>
+    <string name="register_pass_hint">كلمة المرور*</string>
+    <string name="register_con_pass_hint">تأكيد كلمة المرور*</string>
+    <string name="register_female">أنثى</string>
+    <string name="register_male">ذكر</string>
+    <string name="register_submit">تطبيق</string>
+    <string name="register_reset">إعادة تعيين</string>
+    <string name="already_account">هل لديك حساب؟</string>
+    <string name="login"><u>تسجيل الدخول!</u></string>
+    <string name="toast_message_register_name">الرجاء أدخل الإسم</string>
+    <string name="toast_message_register_email">الرجاء إدخال البريد الإلكتروني</string>
+    <string name="toast_message_register_invalid"> البريد الإلكتروني الخاص بك غير صالح</string>
+    <string name="toast_message_register_country_code">يرجى اختيار رمز البلد</string>
+    <string name="toast_message_register_number">الرجاء إدخال رقم الهاتف</string>
+    <string name="please_enter_valid_no">الرجاء إدخال رقم هاتف صحيح</string>
+    <string name="toast_message_register_pass">الرجاء إدخال كلمة المرور</string>
+    <string name="toast_message_register_con_pass">الرجاء تأكيد كلمة المرور</string>
+    <string name="toast_message_register_not_match">كلمة المرور غير متطابقة!</string>
+    <string name="toast_message_register_gender">يرجى تحديد الجنس</string>
+
+        <!-- TODO: SearchResults Screen -->
+    <string name="search_result_title">نتيجة البحث</string>
+    <string name="search_sort">فرز</string>
+    <string name="search_filter">فلتر</string>
+    <string name="no_product_search">المنتج غير متوفر</string>
+
+        <!-- TODO: UserCart Screen -->
+    <string name="user_cart_title">عربتي</string>
+    <string name="cart_title">عربة التسوق</string>
+    <string name="bag">عربة التسوق</string>
+    <string name="user_cart_step">الخطوة 1/4</string>
+    <string name="offer_alert">تنبيه العرض</string>
+    <string name="offer_text">مؤهل! الرجاء اختيار المنتج المجاني من القائمة أدناه لإتمام عملية الشراء</string>
+    <string name="promo">رمز ترويجي</string>
+    <string name="promo_code_hint">إدخال رمز العرض</string>
+    <string name="toast_message_promo_code_hint">الرجاء إدخال رمز العرض</string>
+    <string name="toast_message_success">تم تطبيق رمز العرض بنجاح</string>
+    <string name="toast_message_fail">رمز العرض هو</string>
+    <string name="user_cart_apply_button">تطبيق</string>
+    <string name="user_cart_remove_button">إزالة</string>
+    <string name="user_cart_add_wishlist">إضافة من قائمة الأمنيات</string>
+    <string name="user_cart_total">مجموع العربة:</string>
+    <string name="promo_discount">الخصم:</string>
+    <string name="user_cart_sub_total">المجموع الفرعي:</string>
+    <string name="user_cart_checkout">الدفع</string>
+    <string name="redeem_btn">استبدل</string>
+    <string name="available_loyalty_pont">نقاطك المتاحة هي </string>
+    <string name="redeem_point">النقاط المستبدلة: </string>
+    <string name="redeem_btn_remove_button">إزالة</string>
+    <string name="sub_total_price"> مجموع السعر الفرعي  </string>
+    <string name="loy_point_price">سعر نقاطك:</string>
+    <string name="loyalty_point_added">سيتم إضافة نقاطك عند الشراء بنجاح.</string>
+    <string name="your_bag_empty">عربة التسوق فارغة</string>
+
+        <!-- TODO: WishList Screen -->
+    <string name="wishlist_title">قائمة أمنياتي</string>
+    <string name="wishlist_sort">فرز</string>
+    <string name="wishlist_filter">فلتر</string>
+    <string name="wishlist_no_product">المنتج غير متوفر</string>
+
+        <!-- TODO: ContactUsFragment Screen -->
+    <string name="contact_us_title">إتصل بنا</string>
+    <string name="contact_us_name_hint">إسم*</string>
+    <string name="contact_us_email_hint">عنوان البريد الإلكتروني*</string>
+    <string name="contact_us_number_hint">الجوال*</string>
+    <string name="contact_us_message_hint">رسالة</string>
+    <string name="contact_us_submit">تطبيق</string>
+    <string name="contact_us_reset">إعادة تعيين</string>
+    <string name="follow_us">تابعنا</string>
+
+        <!-- TODO: MyAccountFragment Screen -->
+    <string name="my_account_title">حسابي</string>
+    <string name="my_account_email">البريد الإلكتروني :</string>
+    <string name="my_account_number">الجوال:</string>
+    <string name="order_history">الطلبات السابقة</string>
+    <string name="edit_profile">تعديل الحساب</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="logout">الخروج</string>
+    <string name="you_have">عندك</string>
+    <string name="loy_point">نقاطك</string>
+
+        <!-- TODO: OfferFragment Screen -->
+    <string name="offer_title">@string/navigation_offers</string>
+
+
+    <!-- TODO: CategoryBrandListAdapter Screen -->
+    <string name="view_all">عرض الكل</string>
+
+        <!-- TODO: ProductListAdapter Screen -->
+    <string name="buy_now">إشتري الآن</string>
+    <string name="add_to_cart">أضف إلى السلة</string>
+
+    <string name="latest">جديد</string>
+    <string name="exclusive">حصريا</string>
+    <string name="buy_now_dialog">إضافة المنتج إلى حقيبتك. مواصلة التسوق؟</string>
+    <string name="buy_cart_alert">تنبيه</string>
+    <string name="buy_continue">إستمرار</string>
+    <string name="go_to_bag">اذهب الى عربة التسوق</string>
+
+        <!-- TODO: UserBillingAddressAdapter Screen -->
+    <string name="edit">تصحيح</string>
+    <string name="delete">حذف</string>
+    <string name="editaddress">تعديل العنوان</string>
+    <string name="address_type">نوع العنوان :</string>
+
+    <string name="user_billing_full_name">الإسم الكامل :</string>
+    <string name="user_billing_area">منطقة :</string>
+    <string name="user_billing_block">قطعة :</string>
+    <string name="user_billing_street">شارع :</string>
+    <string name="user_billing_avenue">جادة :</string>
+    <string name="user_billing_house">بناء/ منزل :</string>
+    <string name="user_billing_floor">رقم الدور :</string>
+    <string name="user_billing_flat">شقة :</string>
+    <string name="user_billing_phone">رقم الهاتف :</string>
+    <string name="user_billing_paci">الرقم الآلي:</string>
+    <string name="user_billing_comment">تعليقات :</string>
+    <string name="user_billing_current_loaction">الموقع الحالي :</string>
+
+        <!-- TODO: UserCartAdapter Screen -->
+    <string name="item">المنتج-</string>
+    <string name="out_of_stock">غير متوفر حاليا</string>
+    <string name="out_of_stock_small">المنتج غير متوفر حاليا</string>
+    <string name="remove">إزالة</string>
+    <string name="move_to_wishlist">الانتقال إلى قائمة الأمنيات</string>
+    <string name="user_cart_alert">تنبيه</string>
+    <string name="user_cart_out_of_stock">المنتج المحدد غير متوفر ، يرجى إزالة المنتج من حقيبتك</string>
+    <string name="dialog_product_not_availabel">كمية المطلوبة غير متوفرة</string>
+    <string name="success">نجاحه</string>
+    <string name="item_deleted">تم حذف المنتج بنجاح</string>
+    <string name="item_delete_message">هل أنت متأكد من إزالة المنتج من الحقيبة?</string>
+    <string name="move_to_wish_list">هل أنت متأكد من نقل هذا المنتج من الحقيبة إلى قائمة الأمنيات?</string>
+    <string name="item_moved_wishlist">تم نقل المنتج بنجاح إلى قائمة الأمنيات</string>
+
+        <!-- TODO: WishListAdapter Screen -->
+    <string name="wishlist_buy_now">إشتري الآن</string>
+    <string name="wishlist_latest">جديد</string>
+
+        <!-- TODO: Search Screen -->
+    <string name="search_hint">البحث عن المنتجات</string>
+    <string name="search_button">نتيجة البحث</string>
+    <string name="search">البحث</string>
+
+
+    <!-- TODO: SortDialog Screen -->
+    <string name="sort_by">ترتيب حسب</string>
+
+    <string name="select_gift">الرجاء اختيار هديتك</string>
+    <string name="step">الخطوة 3/4</string>
+    <string name="done">تم</string>
+    <string name="skip">تخطي</string>
+
+        <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_new_address">AddNewAddressActivity</string>
+
+        <!--<string name="l_for_Reg_user"> (تحتسب نقاط الولاء للعملاء المسجلين فقط)</string>-->
+    <string name="l_for_Reg_user">(نقاط الولاء للعملاء المسجلين فقط) <u>  اضغط هنا للتسجيل </u></string>
+    <string name="order_success_msg">تم قبول الطلب بنجاح.</string>
+    <string name="login_error">لم يتم التحقق من حسابك. لذا يرجى التحقق من بريدك الإلكتروني والنقر فوق رابط التحقق.</string>
+    <string name="reg_success_msg">تمت إضافة المستخدم بنجاح.</string>
+    <string name="item_added_succes_msg">تم حذف المنتج بنجاح.</string>
+
+    <string name="guest_account_alert"> لا يمكنك الاستمرار كزائر</string>
+    <string name="take_photo">التقط صورة</string>
+    <string name="from_gallery">إختيار من الاستديو</string>
+    <string name="add_photo">إضافة صورة</string>
+    <string name="delete_address_mdg">هل أنت متأكد من حذف هذا العنوان؟</string>
+    <string name="something_wrong">هناك خطأ ما</string>
+    <string name="choose_email_app">إختيار البريد الإلكتروني للتطبيق</string>
+    <string name="share_your_location">تعبئة العنوان تلقائيا إضغط هنا</string>
+    <string name="whatsapp_not_found">لم يتم العثور على واتس أب</string>
+
+    <string name="offer">عرض</string>
+    <string name="not_now">ليس الان</string>
+
+    <string name="app_update_info1">إصدار E-Games Store الجديد متاح في متجر اللعب.</string>
+    <string name="app_update">إصدار E-Games Store الجديد</string>
+    <string name="update_btn">تحديث</string>
+    <string name="power_need_alert">يُرجى تحديد الطاقة باستثناء 0.00!</string>
+    <string name="left_power_alert">إختر قوة النظر للعين اليسار</string>
+    <string name="right_power_alert">إختر قوة النظر للعين اليمين</string>
+
+    <string name="choose_language">اختر لغتك</string>
+
+    <string name="str_support_email">support@egamesstore.com</string>
+    <string name="str_best">الافضل</string>
+    <string name="str_selling">مبيعاً</string>
+    <string name="str_top">أعلى</string>
+    <string name="brands">العلامات التجارية</string>
+    <string name="str_price">السعر:</string>
+    <string name="related"> ذات صلة</string>
+    <string name="products">منتجات</string>
+
+
+</resources>
+

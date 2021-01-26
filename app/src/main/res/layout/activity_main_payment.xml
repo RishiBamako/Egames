@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/default_margin"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".MainActivityKotlin">
+
+        <TextView
+                android:id="@+id/amountTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:text="@string/please_enter_payment_amount" />
+
+        <EditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+
+                android:textAlignment="center"
+                tools:text="0.100" />
+
+        <TextView
+                android:id="@+id/methodTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:inputType="none"
+                android:text="@string/please_select_payment_method" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPaymentMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+                android:id="@+id/llDirectPaymentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etCardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Car Number"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="5123450000000008" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etExpiryMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Expiry(MM)"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="05" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etExpiryYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Expiry(YY)"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="21" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSecurityCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Security Code"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="100" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etCardHolderName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mahmoud Ibrahim"
+                        android:maxLines="1"
+                        android:text="Mahmoud Ibrahim" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/btPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:background="@color/colorPrimary"
+                android:text="Pay"
+                android:textColor="@color/white" />
+
+        <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        <TextView
+                android:id="@+id/tvResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:textColor="@color/black" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/cardview_dark_background"></LinearLayout>
+
+        <Button
+                android:id="@+id/btSendPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:background="@color/colorPrimary"
+                android:text="Send Payment"
+                android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorBlueBase"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbar"
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+
+            <LinearLayout
+                android:id="@+id/backLinLayoutId"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                >
+                <ImageView
+                    android:id="@+id/back_image"
+                    android:layout_width="@dimen/_20sdp"
+                    android:tint="@color/white"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerVertical="true"/>
+            </LinearLayout>
+
+            <com.rginfotech.egames.customviews.CustomTextViewMedium
+                android:id="@+id/sign_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:layout_centerInParent="true"
+                android:textAllCaps="true"/>
+            <LinearLayout
+                android:id="@+id/liner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp">
+                    <ImageView
+                        android:id="@+id/cart_image"
+                        android:layout_width="@dimen/_30sdp"
+                        android:tint="@color/white"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:src="@drawable/cart" />
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|end|top"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"/>
+                </FrameLayout>
+                <ImageView
+                    android:id="@+id/search_image"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:tint="@color/white"
+                    android:src="@drawable/search_30" />
+                <ImageView
+                    android:id="@+id/filter_image"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:tint="@color/white"
+                    android:visibility="gone"
+                    android:src="@drawable/filter_100" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:src="@drawable/loader_spinner" />
+    </RelativeLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/general_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/user_type_rg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/existing_user_rb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:text="@string/existing_user"
+                    android:textColorHint="@color/white"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"/>
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+                <RadioButton
+                    android:id="@+id/guest_user_rb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/white"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
+                    android:layout_height="match_parent"
+                    android:text="@string/guest_user"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"/>
+
+            </RadioGroup>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:visibility="gone"
+                android:background="@color/dark_gry"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp">
+
+                <com.rginfotech.egames.customviews.CustomEditTextMedium
+                    android:id="@+id/dob_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:drawableLeft="@drawable/user_black_20"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:backgroundTint="@color/white"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/login_email_hint"
+                    android:textAlignment="viewStart"
+                    android:textColorHint="@color/white"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.rginfotech.egames.customviews.CustomEditTextMedium
+                    android:id="@+id/password_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:drawableLeft="@drawable/lock_20"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:backgroundTint="@color/white"
+                    android:inputType="textPassword"
+                    android:hint="@string/login_pass_hint"
+                    android:textAllCaps="false"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+                <com.rginfotech.egames.customviews.CustomTextViewMedium
+                    android:id="@+id/forget_pass_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="right"
+                    android:text="@string/forgot_pass_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_button"
+                    android:fontFamily="@font/futuramediumbt"
+                    android:text="@string/forgot_login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+                    <com.rginfotech.egames.customviews.CustomTextViewMedium
+                        android:id="@+id/account_text_view"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/forgot_account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+                    <!--<com.rginfotech.egames.customviews.CustomTextViewMedium
+                        android:id="@+id/create_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/account"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp" />-->
+                    <com.rginfotech.egames.customviews.CustomTextViewMedium
+                        android:id="@+id/create_account"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/round_button"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text="@string/create_account"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

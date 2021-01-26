@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home"
+        />
+
+    <item
+        android:id="@+id/navigation_dealsofday"
+        android:icon="@drawable/dealofday"
+        android:title="@string/navigation_offers" />
+
+    <item
+        android:id="@+id/cartItemId"
+        android:icon="@drawable/cart"
+        android:title="@string/cart_title"/>
+
+    <item
+        android:id="@+id/navigation_my_account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/navigation_my_accout" />
+
+    <item
+        android:id="@+id/navigation_contact_us"
+        android:icon="@drawable/whatsapp_50"
+        android:title="@string/navigation_contact" />
+
+    <!-- <item
+         android:id="@+id/navigation_contact_us"
+         android:icon="@drawable/contact_us_icon"
+         android:title="@string/navigation_contact" />-->
+    <!-- <item
+         android:id="@+id/chat_menu"
+         android:icon="@drawable/contact_us_icon"
+         android:title="@string/navigation_contact" />-->
+
+</menu>

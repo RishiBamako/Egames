@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    tools:context=".WishListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="@dimen/_1sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"/>
+
+        <com.rginfotech.egames.customviews.CustomTextViewMedium
+            android:id="@+id/brand_name_text"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/wishlist_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp"
+            android:textAllCaps="false"/>
+        <LinearLayout
+            android:id="@+id/liner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp">
+        <ImageView
+            android:id="@+id/cart_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/cart" />
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|end|top"
+                android:fontFamily="@font/futuramediumbt"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"/>
+        </FrameLayout>
+        <ImageView
+            android:id="@+id/search_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/search_30" />
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/toolbar">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/boder_layout">
+            <ImageView
+                android:id="@+id/sort_image"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/short_100" />
+            <TextView
+                android:id="@+id/sort_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/wishlist_sort"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/boder_layout">
+
+            <ImageView
+                android:id="@+id/filter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/filter_100"/>
+            <TextView
+                android:id="@+id/filter_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/wishlist_filter"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wishLists_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_below="@+id/parent_layout"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:visibility="visible"
+        android:src="@drawable/loader_spinner" />
+    <TextView
+        android:id="@+id/product_not_av"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/futuramediumbt"
+        android:text="@string/wishlist_no_product"
+        android:textSize="@dimen/_13sdp"
+        android:visibility="gone"
+        android:textColor="@color/select_item_color" />
+</RelativeLayout>

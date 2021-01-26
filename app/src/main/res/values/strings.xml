@@ -1,0 +1,491 @@
+<resources>
+    <string name="app_name">E-Games Store</string>
+    <string name="internet_error">Internet connection error!</string>
+    <string name="share_with">Share with</string>
+    <string name="hello">Hello,</string>
+    <string name="order_place">Order Placed Successfully.</string>
+    <string name="ok">OK</string>
+    <string name="yes">YES</string>zc
+    <string name="no">NO</string>
+
+    <!-- TODO: MyOrder Screen Screen -->
+    <string name="my_order_title">MY ORDER</string>
+    <string name="order_id">Order Id</string>
+    <string name="offerpricedot">Offer Price : </string>
+    <string name="order_qty">Qty</string>
+    <string name="date">Date</string>
+    <string name="view_details">View Details</string>
+    <string name="order_status">STATUS</string>
+    <string name="feed_back">FEEDBACK</string>
+    <string name="track_order">TRACK ORDER</string>
+    <string name="my_orders">Orders</string>
+    <string name="add_review">ADD REVIEW</string>
+    <string name="comment">Comments</string>
+    <string name="submit_btn">SUBMIT</string>
+    <string name="close_btn">CLOSE</string>
+    <string name="not_order_alert">Your order not shipped yet</string>
+    <string name="your_name">Your Name</string>
+    <string name="enter_name">Please enter name</string>
+    <string name="comment_message">Please enter message</string>
+    <string name="order_details">ORDER DETAILS</string>
+    <string name="done_btn">DONE</string>
+    <string name="product_name">Product Name</string>
+    <string name="gift_name">Gift Name</string>
+    <string name="order">Order Id</string>
+    <string name="price">Price</string>
+    <string name="delivery_charge">Delivery Charges</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="quantity">Quantity</string>
+    <string name="free_qty">Free Quantity Included</string>
+    <string name="di_color">Color</string>
+    <string name="not_availabel">Not available</string>
+    <string name="ship_address">Shipping Address</string>
+    <string name="left_eye">Left Eye Power</string>
+    <string name="right_eye">Right Eye Power</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="di_full_name">Full Name</string>
+    <string name="di_area">Area</string>
+    <string name="di_block">Block</string>
+    <string name="di_street">Street</string>
+    <string name="di_house">House/Building</string>
+    <string name="di_flat">Flat Number</string>
+    <string name="di_phone">Phone Number</string>
+    <string name="di_paci">PACI Number</string>
+    <string name="di_comment">Comments</string>
+    <string name="current_location">Current Location</string>
+    <string name="order_date">Order Date</string>
+    <string name="di_order_status">Order Status</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="coupon_code">Coupon Code</string>
+    <string name="coupon_price">Coupon Price</string>
+    <string name="free_quantity">Free Quantity</string>
+    <string name="offer_name">Offer Name</string>
+    <string name="loyal_point">Received loyalty Points</string>
+    <string name="get">Get</string>
+    <string name="get_point">Loyalty points after payment</string>
+    <string name="paid">Paid loyalty Points</string>
+    <string name="pty_success">Success</string>
+
+    <string name="please_select_payment_method">Please Select Payment Method:</string>
+    <string name="please_enter_payment_amount">Please Enter Payment Amount:</string>
+    <string name="todo">TODO</string>
+    <string name="amount">0.100</string>
+
+
+    <!-- TODO: Home Screen -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="home_title">CONTACT US</string>
+    <string name="title_home">Home</string>
+    <string name="navigation_favourite">Wishlist</string>
+    <string name="navigation_offers">Deals</string>
+    <string name="navigation_my_accout">My Account</string>
+    <string name="navigation_search">Search</string>
+    <string name="navigation_contact">Contact Us</string>
+    <string name="nav_header">sign in / sign up</string>
+    <string name="home">Home</string>
+    <string name="office">Office</string>
+    <string name="other">Other</string>
+    <string name="country">Country</string>
+    <string name="language">Language</string>
+    <string name="category">Categories</string>
+    <string name="term_and_condition">Terms &amp; Conditions</string>
+    <string name="about_us">About Us</string>
+    <string name="faq">FAQ\'s</string>
+    <string name="rate">Rate Us</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="lan_yes">نعم</string>
+    <string name="lan_no">لا</string>
+    <string name="lan_message">هل تريد حقًا تغيير اللغة؟</string>
+    <string name="lan_alert">تنبيه</string>
+
+    <!-- TODO: Country Screen -->
+    <string name="select_language">Please select your language</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="select_country">Please select your country</string>
+    <string name="apply_button">Apply</string>
+    <string name="arabic_apply_button">تطبيق</string>
+
+    <!-- TODO: Category Screen -->
+    <string name="category_text">Categories</string>
+
+    <!-- TODO: TermsAndConditions Screen -->
+    <string name="title_text_view">Terms &amp; Conditions</string>
+
+    <!-- TODO: AboutUs Screen -->
+    <string name="about_us_title_text_view">About Us</string>
+
+    <!-- TODO: LoyaltyPoint Screen -->
+    <string name="loyalty_title_text_view">Loyalty Points</string>
+    <string name="loyalty_point">Available Loyalty Points</string>
+    <string name="loyalty_point_need">You need minimum</string>
+    <string name="loyalty_point_for">point for purchase products with points.</string>
+
+    <!-- TODO: FAQ Screen -->
+    <string name="faq_title_text_view">FAQ\'s</string>
+
+    <!-- TODO: AddNewAddress Screen -->
+    <string name="add_new_address_title_text_view">CHECKOUT</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="step2">STEP 2/4</string>
+    <string name="new_address">NEW ADDRESS</string>
+    <string name="share_location">Share Location</string>
+    <string name="full_name">Full Name</string>
+    <string name="full_name_hint">Enter Full Name</string>
+    <string name="current">Current</string>
+    <string name="current_location_hint">Current Location</string>
+    <string name="current_lat">Current Latitude</string>
+    <string name="current_lat_hint">Current Latitude</string>
+    <string name="current_long">Current Longitude</string>
+    <string name="current_long_hint">Current Longitude</string>
+    <string name="area">Area</string>
+    <string name="area_hint">Area</string>
+    <string name="block">Block</string>
+    <string name="block_hint">Block</string>
+    <string name="street">Street</string>
+    <string name="street_hint">Street</string>
+    <string name="avenue">Avenue</string>
+    <string name="avenue_hint">Avenue</string>
+    <string name="house">House/Building </string>
+    <string name="house_hint">House/Building</string>
+    <string name="floor">Floor Number</string>
+    <string name="floor_hint">Floor Number</string>
+    <string name="flat">Flat Number</string>
+    <string name="flat_hint">Flat Number</string>
+    <string name="phone_number">Phone Number *</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="paci_number">PACI Number</string>
+    <string name="paci_number_hint">PACI Number</string>
+    <string name="comments">Comments</string>
+    <string name="comments_hint">Comments</string>
+    <string name="save_address">SAVE ADDRESS</string>
+    <string name="toast_message_name">Please enter name</string>
+    <string name="please_select_addresstype">Please select address type</string>
+    <string name="toast_massage_mobile">Please enter mobile with correct format</string>
+    <string name="toast_message_area">Please enter area name</string>
+    <string name="toast_message_block">Please enter block</string>
+    <string name="toast_message_street">Please enter street</string>
+    <string name="toast_message_house">Please enter house number</string>
+    <string name="toast_floor">Please enter floor number</string>
+    <string name="toast_flat">Please enter flat number</string>
+    <string name="update_address">Update Address</string>
+
+    <!-- TODO: BrandList Screen -->
+    <string name="title_brand">Brands</string>
+
+    <!-- TODO: ChangePassword Screen -->
+    <string name="change_password_title">Change password</string>
+    <string name="old_password">Old Password*</string>
+    <string name="new_password">New Password*</string>
+    <string name="confirm_password">Confirm New Password*</string>
+    <string name="update_button">UPDATE</string>
+    <string name="toast_message_old_pass">Please enter old password</string>
+    <string name="toast_message_new_pass">Please enter new password</string>
+    <string name="toast_message_con_pass">Please confirm password</string>
+    <string name="toast_message_not_match">Password didn\'t match!</string>
+    Don\'t
+
+    <!-- TODO: CheckOut Screen -->
+    <string name="check_out_title">CHECKOUT</string>
+    <string name="edit_devivery_address">EDIT DELIVERY ADDRESS</string>
+    <string name="check_out_shipping_address">Shipping Address</string>
+    <string name="check_out_step">STEP 2/4</string>
+    <string name="check_out_new_address">ADD NEW ADDRESS</string>
+    <string name="check_out_sub_total">SUB TOTAL :</string>
+    <string name="continue_to_payment">Continue to payment</string>
+    <string name="alert_message">ALERT</string>
+    <string name="select_any_one_address">Please select an address or add new address</string>
+
+    <!-- TODO: Collection Screen -->
+    <string name="collection_title">COLLECTIONS</string>
+
+    <!-- TODO: EditProfile Screen -->
+    <string name="edit_profile_title">EDIT PROFILE</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="number">Number</string>
+    <string name="dateofbirth">Date of birth</string>
+    <string name="profile_update_button">UPDATE</string>
+    <string name="cancle">Cancel</string>
+    <string name="dialog_select_country">Select country....</string>
+    <string name="toast_message_profile_name">Please enter name</string>
+    <string name="toast_message_country_code">Please select country code</string>
+    <string name="toast_message_number">Please enter number</string>
+
+    <!-- TODO: Filter Screen -->
+    <string name="filter_title">Filter</string>
+    <string name="clear_all">clear all</string>
+    <string name="apply_filter_button">Apply Filter</string>
+
+    <!-- TODO: ForgotPassword Screen -->
+    <string name="reset_pass">To Reset your password enter the email address your use to sign in to Egames  </string>
+    <string name="email_id_hint">Enter Email ID</string>
+    <string name="reset_password_button">RESET PASSWORD</string>
+    <string name="toast_message_forgot_email">Please Enter Email ID</string>
+
+    <!-- TODO: Login Screen -->
+    <string name="login_title">login</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_pass_hint">Password</string>
+    <string name="forgot_pass_text">Forgot Password?</string>
+    <string name="forgot_login">LOGIN</string>
+    <string name="login_as_guest">Continue as guest</string>
+    <string name="existing_user">Existing User</string>
+    <string name="guest_user">Guest User</string>
+    <string name="forgot_account">Don\'t have an account !</string>
+    <string name="account"><u>Create new account.</u></string>
+    <string name="toast_message_login_email">Please enter email id</string>
+    <string name="toast_message_login_invalid">Your Email Id is Invalid</string>
+    <string name="toast_message_login_pass">Please enter Password</string>
+    <string name="create_account">CREATE NEW ACCOUNT</string>
+    <string name="login_account">LOGIN</string>
+
+    <!-- TODO: Payment Screen -->
+    <string name="payment_title">PAYMENT</string>
+    <string name="payment_option">PAYMENT OPTIONS</string>
+    <string name="payment_step">STEP 4/4</string>
+    <string name="payment_sub_total">SUB TOTAL :</string>
+    <string name="payment_delivery_charge">DELIVERY CHARGES :</string>
+    <string name="payment_grand_total">GRAND TOTAL :</string>
+    <string name="pay_now">pay now</string>
+    <string name="show_shipping_address">show shipping address</string>
+    <string name="payment_dialog_alert">ALERT</string>
+    <string name="payment_dialog_option">Please select payment option</string>
+    <string name="cannot_getting_payment">Invalid Payment</string>
+
+    <!-- TODO: PaymentCommant Screen -->
+    <string name="payment_comman_title">PAYMENT</string>
+
+    <!-- TODO: ProductDetails Screen -->
+    <string name="review_text">Review</string>
+    <string name="offer_text_view">@string/navigation_offers</string>
+    <string name="qty">QTY</string>
+    <string name="left_qty">Left QTY</string>
+    <string name="right_qty">Right QTY</string>
+    <string name="select_power">select power</string>
+    <string name="left_lense_price">Left Lens Price:</string>
+    <string name="right_lense_price">Right Lens Price:</string>
+    <string name="left_eye_power">Left Eye Power:</string>
+    <string name="right_eye_power">Right Eye Power:</string>
+    <string name="related_product">RELATED PRODUCTS</string>
+    <string name="wishlist">WISHLIST</string>
+    <string name="mywishlist">My Wishlist</string>
+    <string name="remove_wishlist">REMOVE FROM WISHLIST</string>
+    <string name="add_to_bag">ADD TO BAG</string>
+    <string name="select_power_dialog">Select Power</string>
+    <string name="left_eye_text_dialog">Left eye:</string>
+    <string name="right_eye_text_dialog">Right eye:</string>
+    <string name="done_dialog_button">DONE</string>
+    <string name="product_code">Product Code</string>
+
+    <!-- TODO: ProductList Screen -->
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
+    <string name="product_not_available">No products found</string>
+
+    <!-- TODO: Register Screen -->
+    <string name="register_title">Register</string>
+    <string name="register_name_hint">Name*</string>
+    <string name="register_email_hint">Email ID*</string>
+    <string name="register_number">Mobile*</string>
+    <string name="register_pass_hint">Password*</string>
+    <string name="register_con_pass_hint">Confirm Password*</string>
+    <string name="register_female">Female</string>
+    <string name="register_male">Male</string>
+    <string name="register_submit">SUBMIT</string>
+    <string name="register_reset">RESET</string>
+    <string name="already_account">Already have an account?</string>
+    <string name="login"><u>Login!</u></string>
+    <string name="toast_message_register_name">Please enter name</string>
+    <string name="toast_message_register_email">Please enter email id</string>
+    <string name="toast_message_register_invalid">Your Email Id is Invalid</string>
+    <string name="toast_message_register_country_code">Please select country code</string>
+    <string name="toast_message_register_number">Please enter phone number</string>
+    <string name="please_enter_valid_no">Please enter valid phone number</string>
+    <string name="toast_message_register_pass">Please enter password</string>
+    <string name="toast_message_register_con_pass">Please enter confirm password</string>
+    <string name="toast_message_register_not_match">Password didn\'t match!</string>
+
+    <string name="toast_message_register_gender">Please select gender</string>
+
+    <!-- TODO: SearchResults Screen -->
+    <string name="search_result_title">Search Result</string>
+    <string name="search_sort">Sort</string>
+    <string name="search_filter">Filter</string>
+    <string name="no_product_search">No products found</string>
+
+    <!-- TODO: UserCart Screen -->
+    <string name="user_cart_title">MY CART</string>
+    <string name="cart_title">Cart</string>
+    <string name="bag">Cart</string>
+    <string name="user_cart_step">STEP 1/4</string>
+    <string name="offer_alert">Offer Alert</string>
+    <string name="offer_text">Eligible! Please choose your free item from below product to complete the order</string>
+    <string name="promo">Promo Code</string>
+    <string name="promo_code_hint">Enter Promo Code</string>
+    <string name="toast_message_promo_code_hint">Please enter promo code</string>
+    <string name="toast_message_success">Promo Code Applied Successfully</string>
+    <string name="toast_message_fail">Promo Code Is</string>
+    <string name="user_cart_apply_button">Apply</string>
+    <string name="user_cart_remove_button">Remove</string>
+    <string name="user_cart_add_wishlist">add from wishlist</string>
+    <string name="user_cart_total">CART TOTAL :</string>
+    <string name="total">TOTAL</string>
+    <string name="totaldash">TOTAL :</string>
+    <string name="promo_discount">PROMO DISCOUNT :</string>
+    <string name="user_cart_sub_total">SUB TOTAL :</string>
+    <string name="user_cart_checkout">CHECKOUT</string>
+    <string name="redeem_btn">Redeem</string>
+    <string name="available_loyalty_pont">Available loyalty point is </string>
+    <string name="redeem_point">Redeemed Points : </string>
+    <string name="redeem_btn_remove_button">Remove</string>
+    <string name="sub_total_price">Your sub total price is </string>
+    <string name="loy_point_price">Loyalty Point Price :</string>
+    <string name="loyalty_point_added">Loyalty Point will be added on successful purchase.</string>
+    <string name="your_bag_empty">YOUR CART IS EMPTY</string>
+
+
+    <!-- TODO: WishList Screen -->
+    <string name="wishlist_title">My Wish List</string>
+    <string name="wishlist_sort">Sort</string>
+    <string name="wishlist_filter">Filter</string>
+    <string name="wishlist_no_product">No products found</string>
+
+    <!-- TODO: ContactUsFragment Screen -->
+    <string name="contact_us_title">Contact Us</string>
+    <string name="contact_us_name_hint">Name*</string>
+    <string name="contact_us_email_hint">Email ID*</string>
+    <string name="contact_us_number_hint">Mobile*</string>
+    <string name="contact_us_message_hint">Message</string>
+    <string name="contact_us_submit">SUBMIT</string>
+    <string name="contact_us_reset">RESET</string>
+    <string name="follow_us">Follow Us</string>
+
+    <!-- TODO: MyAccountFragment Screen -->
+    <string name="my_account_title">My Account</string>
+    <string name="my_account_email">Email :</string>
+    <string name="my_account_number">Mobile :</string>
+    <string name="order_history">Order history</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">Logout</string>
+    <string name="you_have">You have</string>
+    <string name="loy_point">Loyalty Points</string>
+
+    <!-- TODO: OfferFragment Screen -->
+    <string name="offer_title">@string/navigation_offers</string>
+
+    <!-- TODO: CategoryBrandListAdapter Screen -->
+    <string name="view_all">View All</string>
+
+    <!-- TODO: ProductListAdapter Screen -->
+    <string name="buy_now">BUY NOW</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="latest">LATEST</string>
+    <string name="exclusive">EXCLUSIVE</string>
+    <string name="buy_now_dialog">Item added to your bag. Continue Shopping?</string>
+    <string name="payment_option_text">Products you have in cart does not required delivery, codes can be shared on whatsapp</string>
+    <string name="sharecodeonwhatsapp">Share code on Whatsapp</string>
+    <string name="pleasedeliverit">Please deliver it</string>
+    <string name="buy_cart_alert">Alert</string>
+    <string name="buy_continue">Continue</string>
+    <string name="go_to_bag">Go To Cart</string>
+
+    <!-- TODO: UserBillingAddressAdapter Screen -->
+    <string name="edit">EDIT</string>
+    <string name="editaddress">EDIT ADDRESS</string>
+    <string name="address_type">Address Type : </string>
+    <string name="delete">DELETE</string>
+    <string name="user_billing_full_name">Full Name :</string>
+    <string name="user_billing_area">Area :</string>
+    <string name="user_billing_block">Block :</string>
+    <string name="user_billing_street">Street :</string>
+    <string name="user_billing_avenue">Avenue :</string>
+    <string name="user_billing_house">House/Building :</string>
+    <string name="user_billing_floor">Floor Number :</string>
+    <string name="user_billing_flat">Flat Number :</string>
+    <string name="user_billing_phone">Phone Number :</string>
+    <string name="user_billing_paci">PACI Number :</string>
+    <string name="user_billing_comment">Comments :</string>
+    <string name="user_billing_current_loaction">Current Location :</string>
+
+    <!-- TODO: UserCartAdapter Screen -->
+    <string name="item">ITEM -</string>
+    <string name="out_of_stock">Out Of Stock</string>
+    <string name="out_of_stock_small">Out of stock</string>
+    <string name="remove">remove</string>
+    <string name="move_to_wishlist">MOVE TO WISHLIST</string>
+    <string name="user_cart_alert">ALERT</string>
+    <string name="user_cart_out_of_stock">Your selected product is out of stock, Please remove product from your bag</string>
+    <string name="dialog_product_not_availabel">’More Product quantity is not available</string>
+    <string name="success">Success</string>
+    <string name="item_deleted">Item deleted successfully</string>
+    <string name="item_delete_message">Are you sure to delete this item from bag?</string>
+    <string name="move_to_wish_list">Are you sure to move this item from bag to wishlist?</string>
+    <string name="item_moved_wishlist">Item moved to wishlist</string>
+
+
+    <!-- TODO: WishListAdapter Screen -->
+    <string name="wishlist_buy_now">BUY NOW</string>
+    <string name="wishlist_latest">LATEST</string>
+
+    <!-- TODO: Search Screen -->
+    <string name="search_hint">Search Products</string>
+    <string name="search_button">Search Result</string>
+    <string name="search">Search</string>
+    ````````````````
+    <!-- TODO: SortDialog Screen -->
+    <string name="sort_by">Sort by</string>
+
+
+    <!-- TODO: GiftDialog Screen -->
+    <string name="select_gift">Select your free gift</string>
+    <string name="step">STEP 3/4</string>
+    <string name="done">DONE</string>
+    <string name="skip">SKIP</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_new_address">AddNewAddressActivity</string>
+
+    <string name="l_for_Reg_user">(Loyalty points for registered customers only) \n <u>Click here to register.</u></string>
+    <string name="order_success_msg">Order Placed Successfully.</string>
+    <string name="login_error">Your account is not verified. So please check your email and click verification link.</string>
+    <string name="reg_success_msg">User added successfully.</string>
+    <string name="item_added_succes_msg">Item deleted successfully.</string>
+    <string name="guest_account_alert">You are not authorized to view as guest user.</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="from_gallery">Choose from Gallery</string>
+    <string name="add_photo">Add Photo!</string>
+    <string name="delete_address_mdg">Are you sure to delete this address?</string>
+    <string name="something_wrong">Something went wrong.</string>
+    <string name="choose_email_app">Choose an Email app</string>
+    <string name="share_your_location">Address auto fill click here</string>
+    <string name="whatsapp_not_found">WhatsApp not found!</string>
+
+    <string name="offer">Offer</string>
+    <string name="not_now">Not Now</string>
+
+    <string name="app_update_info1">New E-Games Store version is available on play store.</string>
+    <string name="app_update">New E-Games Store Version</string>
+    <string name="update_btn">Update</string>
+    <string name="power_need_alert">Please select power except 0.00!</string>
+    <string name="left_power_alert">Please select left eye power</string>
+    <string name="right_power_alert">Please select right eye power</string>
+    <string name="choose_language">Choose Your Language</string>
+    <string name="str_support_email">support@egamesstore.com</string>
+    <string name="str_best">"BEST "</string>
+    <string name="str_selling">SELLING</string>
+    <string name="str_top">"TOP "</string>
+    <string name="brands">Brands</string>
+    <string name="release">RELEASE</string>
+    <string name="new_string">NEW</string>
+    <string name="str_price">Price:</string>
+    <string name="related">Related</string>
+    <string name="products">products</string>
+    <!--<string name="app_update_info1">New version is available on play store, for good experience please update your app from play store.</string>-->
+
+</resources>

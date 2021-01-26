@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueBase"
+    tools:context=".BrandListActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorToolbar"
+        android:elevation="@dimen/_1sdp"
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:tint="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"/>
+            <com.rginfotech.egames.customviews.CustomTextViewMedium
+                android:id="@+id/title_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_brand"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textAllCaps="true"/>
+            <LinearLayout
+                android:id="@+id/liner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp">
+                    <ImageView
+                        android:id="@+id/cart_image"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:tint="@color/white"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/cart" />
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|end|top"
+                        android:fontFamily="@font/futuramediumbt"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"/>
+                </FrameLayout>
+                <ImageView
+                    android:id="@+id/search_image"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:tint="@color/white"
+                    android:src="@drawable/search_30" />
+                <ImageView
+                    android:id="@+id/filter_image"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:tint="@color/white"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/filter_100" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/brandLists_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/toolbar"/>
+
+    <!--<pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:src="@drawable/loader_spinner" />-->
+
+</RelativeLayout>

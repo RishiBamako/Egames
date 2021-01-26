@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="@dimen/_5sdp">
+
+    <ImageView
+        android:id="@+id/imgViewFlag"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:scaleType="fitXY"
+        android:padding="@dimen/_1sdp"
+        android:background="@drawable/boder_layout"
+        android:src="@drawable/no_img"/>
+
+    <TextView
+        android:id="@+id/txtViewCountryName"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/futuramediumbt"
+        android:text="INDIA"
+        android:textAlignment="viewStart"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:id="@+id/imgViewcheck"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_width="@dimen/_50sdp"
+        android:visibility="visible"
+        android:gravity="right"
+        android:src="@drawable/right_tik_50"/>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/brand_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+        <TextView
+            android:id="@+id/brand_tv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:fontFamily="@font/futuralight"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/radio_iv"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:tint="#696673"
+            android:src="@drawable/de_select_100"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/dark_gry"/>
+</LinearLayout>

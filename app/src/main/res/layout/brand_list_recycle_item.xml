@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:id="@+id/mainParentViewId"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_90sdp">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:src="@drawable/no_img"
+                android:scaleType="fitXY"
+                android:layout_below="@+id/categoryName"/>
+
+            <RelativeLayout
+                android:id="@+id/relative_wishlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="4dp"
+                android:layout_margin="3dp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/wish_list_image"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:tint="@color/white"
+                    android:src="@drawable/heart_s" />
+
+                <ImageView
+                    android:id="@+id/wish_list_image1"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/heart_fill1"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_2sdp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true">
+                <ImageView
+                    android:id="@+id/offer_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    android:src="@drawable/ic_offer_tag"/>
+                <TextView
+                    android:id="@+id/offer_text_view"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/futur"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_7sdp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
