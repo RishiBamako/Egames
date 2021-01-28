@@ -39,7 +39,16 @@ public class ProductSearchModel implements Serializable {
     private String offer_name;
     private String deal_otd;
     private String wishlist;
+    private String product_condition;
     private String deal_otd_discount;
+
+    public String getProduct_condition() {
+        return product_condition;
+    }
+
+    public void setProduct_condition(String product_condition) {
+        this.product_condition = product_condition;
+    }
 
     public String getWishlist() {
         return wishlist;

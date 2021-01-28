@@ -924,6 +924,7 @@ public class CartFragment extends Fragment implements View.OnClickListener, User
         liner_layout_loyalty_point.setVisibility(View.GONE);
         if (CommanMethod.isInternetConnected(activity)) {
             getCartValue();
+            CommanClass.addCustomView(activity, HomeActivity.navView,HomeActivity.cartCountTextView);
         }
     }
     /*@Override

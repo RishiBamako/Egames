@@ -817,13 +817,16 @@ public class WishList_NewActivity extends AppCompatActivity implements View.OnCl
                             productList.setUser_id(jsonObject2.getString("user_id"));
                             productList.setCate_id(jsonObject2.getString("cate_id"));
                             productList.setCate_name(jsonObject2.getString("cate_name"));
-                            productList.setTitle(jsonObject2.getString("title"));
                             productList.setDescription(jsonObject2.getString("description"));
                             productList.setProduct_image(API.ProductURL + jsonObject2.getString("product_image"));
                             productList.setProduct_images(jsonObject2.getString("product_images"));
                             productList.setModel_no(jsonObject2.getString("model_no"));
                             productList.setSku_code(jsonObject2.getString("sku_code"));
                             productList.setPrice(jsonObject2.getString("price"));
+
+                            String productCondition = jsonObject2.getString("product_condition");
+                            productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(WishList_NewActivity.this,productCondition));
+
 
                             productList.setDeal_otd_discount(jsonObject2.getString("deal_otd_discount"));
                             productList.setDeal_otd(jsonObject2.getString("deal_otd"));

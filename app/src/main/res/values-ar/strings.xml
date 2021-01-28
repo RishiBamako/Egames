@@ -276,10 +276,10 @@
     <string name="right_eye_power"> قوة العين اليمين:</string>
     <string name="related_product">منتجات ذات صلة</string>
     <string name="wishlist">قائمة الرغبات</string>
-    <string name="payment_option_text">المنتجات التي لديك في عربة التسوق لا تتطلب التسليم ، يمكن مشاركة الرموز على whatsapp</string>
+    <string name="payment_option_text">لا يتطلب المنتج الموجود في عربة التسوق التسليم ، ويمكن مشاركة الرموز رقميًا عبر WhatsApp / البريد الإلكتروني / الإشعار</string>
     <string name="mywishlist">قائمة امنياتي</string>
     <string name="remove_wishlist">إزالة من قائمة أمنياتي</string>
-    <string name="sharecodeonwhatsapp">شارك الكود على Whatsapp</string>
+    <string name="sharecodeonwhatsapp">رمز المشاركة رقميًا</string>
     <string name="pleasedeliverit">الرجاء توصيلها</string>
     <string name="add_to_bag">أضف الى الحقيبة</string>
     <string name="select_power_dialog">اختر درجة النظر</string>
@@ -419,6 +419,8 @@
     <string name="item">المنتج-</string>
     <string name="out_of_stock">غير متوفر حاليا</string>
     <string name="out_of_stock_small">المنتج غير متوفر حاليا</string>
+    <string name="new_status">جديد</string>
+    <string name="preowned_status">مملوكة من قبل</string>
     <string name="remove">إزالة</string>
     <string name="move_to_wishlist">الانتقال إلى قائمة الأمنيات</string>
     <string name="user_cart_alert">تنبيه</string>

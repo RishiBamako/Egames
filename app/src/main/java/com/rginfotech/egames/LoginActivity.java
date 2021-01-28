@@ -713,7 +713,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
        /* final Dialog dialog = CommanMethod.getCustomProgressDialog(this);
         dialog.show();*/
         RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "productlist_of_brand", new com.android.volley.Response.Listener<String>() {
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "product_search_by_name", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -744,6 +744,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                                 productList.setSku_code(jsonObject2.getString("sku_code"));
                                 productList.setPrice(jsonObject2.getString("price"));
                                 productList.setCurrent_currency(jsonObject2.getString("current_currency"));
+
+                                String productCondition = jsonObject2.getString("product_condition");
+                                productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(LoginActivity.this,productCondition));
+
+
                                 //productList.setSale_price(jsonObject2.getString("sale_price"));
                                 productList.setNegotiable(jsonObject2.getString("negotiable"));
                                 productList.setBrand_name(jsonObject2.getString("brand_name"));

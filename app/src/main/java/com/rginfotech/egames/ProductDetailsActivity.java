@@ -122,7 +122,7 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
     private SessionManager sessionManager;
     private String getProduct_id = "";
     private String getBrand_id = "";
-    private String getBrand_name = "", cate_id = "";
+    private String getBrand_name = "", cate_id = "",product_condition;
     public static String wishList = "";
     private String select_qty = "";
     private TextView offer_text_view1;
@@ -431,6 +431,7 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
                         wishList = jsonObject2.getString("wishlist");
                         cate_id = jsonObject2.getString("cate_id");
                         cate_id = jsonObject2.getString("cate_id");
+                        product_condition = jsonObject2.getString("product_condition");
 
                         if (!TextUtils.isEmpty(wishList) && wishList.equals("1")) {
                             wish_list_image1.setVisibility(View.VISIBLE);
@@ -555,16 +556,15 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
 
                         discription_text_view.setMovementMethod(LinkMovementMethod.getInstance());
 
-
                         Log.e("object", jsonObject2.getString("description"));
                         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_LTR) {
-                            product_name.setText(jsonObject2.getString("title"));
+                            product_name.setText(jsonObject2.getString("title")+"/"+CommanClass.productType(ProductDetailsActivity.this,product_condition));
                             title_text_view.setText(jsonObject2.getString("title"));
                             //offer_text_view1.setText(offerObject.optString("name", ""));
                             discription_text_view.setText(Html.fromHtml(jsonObject2.getString("description").replace("<strong>", "").replace("<h1>", "").replace("</h1>", "").replace("</strong>", "")));
 
                         } else {
-                            product_name.setText(jsonObject2.getString("title_ar"));
+                            product_name.setText(jsonObject2.getString("title_ar")+"/"+CommanClass.productType(ProductDetailsActivity.this,product_condition));
                             title_text_view.setText(jsonObject2.getString("title_ar"));
                             discription_text_view.setText(Html.fromHtml(jsonObject2.getString("description_ar").replace("<strong>", "").replace("<h1>", "").replace("</h1>", "").replace("</strong>", "")));
                             //offer_text_view1.setText(offerObject.optString("name_ar",""));
@@ -1017,6 +1017,7 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
             public void onResponse(String response) {
                 try {
                     dialog.dismiss();
+                    CommanClass.addCustomView(ProductDetailsActivity.this,HomeActivity.navView,HomeActivity.cartCountTextView);
                     JSONObject object = new JSONObject(response);
                     String status = object.getString("status");
                     if (status.equals("success")) {
@@ -1286,7 +1287,7 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
        /* final Dialog dialog = CommanMethod.getCustomProgressDialog(this);
         dialog.show();*/
         RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "productlist_of_brand", new com.android.volley.Response.Listener<String>() {
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "product_search_by_name", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -1309,7 +1310,6 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
                                 productList.setUser_id(jsonObject2.getString("user_id"));
                                 productList.setCate_id(jsonObject2.getString("cate_id"));
                                 productList.setCate_name(jsonObject2.getString("cate_name"));
-                                productList.setTitle(jsonObject2.getString("title"));
                                 productList.setDescription(jsonObject2.getString("description"));
                                 productList.setProduct_image(API.ProductURL + jsonObject2.getString("product_image"));
                                 productList.setProduct_images(jsonObject2.getString("product_images"));
@@ -1317,6 +1317,11 @@ public class ProductDetailsActivity extends BaseActivity implements View.OnClick
                                 productList.setSku_code(jsonObject2.getString("sku_code"));
                                 productList.setPrice(jsonObject2.getString("price"));
                                 productList.setCurrent_currency(jsonObject2.getString("current_currency"));
+
+                                String productCondition = jsonObject2.getString("product_condition");
+                                productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(ProductDetailsActivity.this,productCondition));
+
+
                                 //productList.setSale_price(jsonObject2.getString("sale_price"));
                                 productList.setNegotiable(jsonObject2.getString("negotiable"));
                                 productList.setBrand_name(jsonObject2.getString("brand_name"));

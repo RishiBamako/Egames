@@ -835,7 +835,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                                 productList.setUser_id(jsonObject2.getString("user_id"));
                                 productList.setCate_id(jsonObject2.getString("cate_id"));
                                 productList.setCate_name(jsonObject2.getString("cate_name"));
-                                productList.setTitle(jsonObject2.getString("title"));
                                 productList.setDescription(jsonObject2.getString("description"));
                                 productList.setProduct_image(API.ProductURL + jsonObject2.getString("product_image"));
                                 productList.setProduct_images(jsonObject2.getString("product_images"));
@@ -844,6 +843,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                                 productList.setPrice(jsonObject2.getString("price"));
                                 productList.setCurrent_currency(jsonObject2.getString("current_currency"));
                                 //productList.setSale_price(jsonObject2.getString("sale_price"));
+                                String productCondition = jsonObject2.getString("product_condition");
+                                productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(RegisterActivity.this,productCondition));
+
                                 productList.setNegotiable(jsonObject2.getString("negotiable"));
                                 productList.setBrand_name(jsonObject2.getString("brand_name"));
                                 productList.setBrand_id(jsonObject2.getString("brand_id"));
@@ -861,6 +863,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                                 productList.setReleted_product(jsonObject2.getString("releted_product"));
                                 productList.setOffer_id(jsonObject2.getString("offer_id"));
                                 productList.setOffer_name(jsonObject2.getString("offer_name"));
+
 
                                 productLists.add(productList);
 

@@ -737,7 +737,7 @@ public class OffersFragment extends Fragment implements View.OnClickListener, So
     private void searchProduct(String search_text) {
 
         RequestQueue mRequestQueue = Volley.newRequestQueue(getContext());
-        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "productlist_of_brand", new com.android.volley.Response.Listener<String>() {
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "product_search_by_name", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -757,13 +757,17 @@ public class OffersFragment extends Fragment implements View.OnClickListener, So
                             productList.setUser_id(jsonObject2.getString("user_id"));
                             productList.setCate_id(jsonObject2.getString("cate_id"));
                             productList.setCate_name(jsonObject2.getString("cate_name"));
-                            productList.setTitle(jsonObject2.getString("title"));
                             productList.setDescription(jsonObject2.getString("description"));
                             productList.setProduct_image(API.ProductURL + jsonObject2.getString("product_image"));
                             productList.setProduct_images(jsonObject2.getString("product_images"));
                             productList.setModel_no(jsonObject2.getString("model_no"));
                             productList.setSku_code(jsonObject2.getString("sku_code"));
                             productList.setPrice(jsonObject2.getString("price"));
+
+                            productList.setProduct_condition(jsonObject2.getString("product_condition"));
+                            String productCondition = jsonObject2.getString("product_condition");
+                            productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(getActivity(),productCondition));
+
                             productList.setCurrent_currency(jsonObject2.getString("current_currency"));
                             //productList.setSale_price(jsonObject2.getString("sale_price"));
                             productList.setNegotiable(jsonObject2.getString("negotiable"));

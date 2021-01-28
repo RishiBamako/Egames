@@ -50,6 +50,7 @@ public class Utils {
     public static String value = "";
     public static int selectedSortPosition = 0;
     public static List<ProductSearchModel> productLists = new ArrayList<>();
+    public static boolean isFromDelete = false;
 
 
 

@@ -25,14 +25,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.rginfotech.egames.HomeActivity;
 import com.rginfotech.egames.ProductDetailsActivity;
 import com.rginfotech.egames.R;
 import com.rginfotech.egames.api.API;
 import com.rginfotech.egames.interfacelenzzo.ItemRemoved;
 import com.rginfotech.egames.interfacelenzzo.UserCartInterface;
 import com.rginfotech.egames.model.UserCartModel;
+import com.rginfotech.egames.utility.CommanClass;
 import com.rginfotech.egames.utility.CommanMethod;
 import com.rginfotech.egames.utility.SessionManager;
+import com.rginfotech.egames.utility.Utils;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -376,7 +379,6 @@ public class UserCartAdapter extends RecyclerView.Adapter<UserCartAdapter.MyView
     }
 
     private void dialogBox(final String user_cart_id, final int posi, String info) {
-
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
@@ -387,6 +389,7 @@ public class UserCartAdapter extends RecyclerView.Adapter<UserCartAdapter.MyView
         TextView go_to_text_view = dialog.findViewById(R.id.change_language_no);
         continue_text_view.setOnClickListener(v -> {
             dialog.dismiss();
+            Utils.isFromDelete = true;
             deleteCartItem(user_cart_id, posi);
         });
         go_to_text_view.setOnClickListener(v -> dialog.dismiss());

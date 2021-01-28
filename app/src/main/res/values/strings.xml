@@ -386,8 +386,8 @@
     <string name="latest">LATEST</string>
     <string name="exclusive">EXCLUSIVE</string>
     <string name="buy_now_dialog">Item added to your bag. Continue Shopping?</string>
-    <string name="payment_option_text">Products you have in cart does not required delivery, codes can be shared on whatsapp</string>
-    <string name="sharecodeonwhatsapp">Share code on Whatsapp</string>
+    <string name="payment_option_text">Product you have in cart does not require delivery, codes can be shared digitally via WhatsApp/Email/Notification</string>
+    <string name="sharecodeonwhatsapp">Share code Digitally</string>
     <string name="pleasedeliverit">Please deliver it</string>
     <string name="buy_cart_alert">Alert</string>
     <string name="buy_continue">Continue</string>
@@ -414,6 +414,8 @@
     <!-- TODO: UserCartAdapter Screen -->
     <string name="item">ITEM -</string>
     <string name="out_of_stock">Out Of Stock</string>
+    <string name="new_status">New</string>
+    <string name="preowned_status">Pre-Owned</string>
     <string name="out_of_stock_small">Out of stock</string>
     <string name="remove">remove</string>
     <string name="move_to_wishlist">MOVE TO WISHLIST</string>

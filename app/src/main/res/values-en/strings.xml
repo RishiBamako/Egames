@@ -415,6 +415,8 @@
     <string name="item">ITEM -</string>
     <string name="out_of_stock">Out Of Stock</string>
     <string name="out_of_stock_small">Out of stock</string>
+    <string name="new_status">New</string>
+    <string name="preowned_status">Pre-Owned</string>
     <string name="remove">remove</string>
     <string name="move_to_wishlist">MOVE TO WISHLIST</string>
     <string name="user_cart_alert">ALERT</string>
@@ -467,8 +469,8 @@
     <string name="share_your_location">Address auto fill click here</string>
     <string name="whatsapp_not_found">WhatsApp not found!</string>
     <string name="mywishlist">My Wishlist</string>
-    <string name="payment_option_text">Products you have in cart does not required delivery, codes can be shared on whatsapp</string>
-    <string name="sharecodeonwhatsapp">Share code on Whatsapp</string>
+    <string name="payment_option_text">Product you have in cart does not require delivery, codes can be shared digitally via WhatsApp/Email/Notification</string>
+    <string name="sharecodeonwhatsapp">Share code Digitally</string>
     <string name="pleasedeliverit">Please deliver it</string>
     <string name="offer">Offer</string>
     <string name="not_now">Not Now</string>

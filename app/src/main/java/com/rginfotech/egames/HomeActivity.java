@@ -15,7 +15,6 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -50,8 +49,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -116,7 +113,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     Banner_Redirect banner_redirect;
     ImageView kdaImageViewId;
     TextView product_not_av;
-    private BottomNavigationView navView;
+    public static BottomNavigationView navView;
     private DrawerLayout drawer;
     private List<ImageSliderList> imageSliderLists;
     private ImageSliderAdapter imageSliderAdapter;
@@ -187,10 +184,13 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         } else if ("en".equals(sessionManager.getLanguageSelected())) {
             LocaleManager.setNewLocale(this, "en");
         }
+
+
         BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = item -> {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     //  getSupportActionBar().show();
+                    CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
                     Utils.isFromDealOfDays = false;
                     searchbarLinLayoutId.setVisibility(View.VISIBLE);
                     int count = getSupportFragmentManager().getBackStackEntryCount();
@@ -211,6 +211,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
                 case R.id.navigation_dealsofday:
                     Utils.isFromDealOfDays = true;
+                    CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
                     searchbarLinLayoutId.setVisibility(View.GONE);
                     OffersFragment offersFragment = new OffersFragment();
                     replaceFragment(offersFragment);
@@ -223,6 +224,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                     //startActivity(intent);
                 /*WishListFragment wishListFragment = new WishListFragment();
                 replaceFragment(wishListFragment);*/
+                    CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
                     Utils.isFromDealOfDays = false;
                     CartFragment CartFragment = new CartFragment();
                     replaceFragment(CartFragment);
@@ -231,7 +233,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                 case R.id.navigation_my_account:
                     Utils.isFromDealOfDays = false;
                     searchbarLinLayoutId.setVisibility(View.GONE);
-
+                    CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
                     if (!sessionManager.getUserEmail().isEmpty() && !sessionManager.getUserPassword().isEmpty()) {
                         MyAccountFragment myAccountFragment = new MyAccountFragment();
                         replaceFragment(myAccountFragment);
@@ -245,7 +247,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                 case R.id.navigation_contact_us:
                     Utils.isFromDealOfDays = false;
                     searchbarLinLayoutId.setVisibility(View.GONE);
-
+                    CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
                     openWhatsApp();
                     //logo_image.setVisibility(View.GONE);
                     //title_text_view.setVisibility(View.VISIBLE);
@@ -255,7 +257,12 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
             }
             return false;
         };
-
+        if(getIntent().hasExtra("DELETE_YESEEEE")){
+            CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
+            Utils.isFromDealOfDays = false;
+            CartFragment CartFragment = new CartFragment();
+            replaceFragment(CartFragment);
+        }
         user_name_textview = (TextView) findViewById(R.id.user_name_textview);
         user_name_textview.setVisibility(View.GONE);
         title_text_view = (TextView) findViewById(R.id.title_text_view);
@@ -518,20 +525,10 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
             smallLabel.setMaxLines(2);
             largeLabel.setMaxLines(2);
         }*/
-        addCustomView(navView);
+        CommanClass.addCustomView(HomeActivity.this,navView,cartCountTextView);
         checkForUpdate();
     }
 
-    private void addCustomView(BottomNavigationView navView) {
-        BottomNavigationMenuView mbottomNavigationMenuView = (BottomNavigationMenuView) navView.getChildAt(0);
-        View view = mbottomNavigationMenuView.getChildAt(2);
-        BottomNavigationItemView itemView = (BottomNavigationItemView) view;
-        View cart_badge = LayoutInflater.from(this)
-                .inflate(R.layout.cart_count_round_layout, navView, false);
-        cartCountTextView = cart_badge.findViewById(R.id.notificationsBadge);
-        CommanClass.getCartValue(HomeActivity.this, HomeActivity.cartCountTextView);
-        itemView.addView(cart_badge);
-    }
 
     private void getSupportDetails() {
         //gifImageView.setVisibility(View.VISIBLE);
@@ -1457,9 +1454,8 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
     private void searchProduct(String search_text) {
-
         RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "productlist_of_brand", new com.android.volley.Response.Listener<String>() {
+        StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "product_search_by_name", new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -1479,7 +1475,6 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                             productList.setUser_id(jsonObject2.getString("user_id"));
                             productList.setCate_id(jsonObject2.getString("cate_id"));
                             productList.setCate_name(jsonObject2.getString("cate_name"));
-                            productList.setTitle(jsonObject2.getString("title"));
                             productList.setDescription(jsonObject2.getString("description"));
                             productList.setProduct_image(API.ProductURL + jsonObject2.getString("product_image"));
                             productList.setProduct_images(jsonObject2.getString("product_images"));
@@ -1487,6 +1482,11 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                             productList.setSku_code(jsonObject2.getString("sku_code"));
                             productList.setPrice(jsonObject2.getString("price"));
                             productList.setCurrent_currency(jsonObject2.getString("current_currency"));
+                            productList.setProduct_condition(jsonObject2.getString("product_condition"));
+
+                            String productCondition = jsonObject2.getString("product_condition");
+                            productList.setTitle(jsonObject2.getString("title")+"/"+CommanClass.productType(HomeActivity.this,productCondition));
+
                             //productList.setSale_price(jsonObject2.getString("sale_price"));
                             productList.setNegotiable(jsonObject2.getString("negotiable"));
                             productList.setBrand_name(jsonObject2.getString("brand_name"));
@@ -1514,7 +1514,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                     e.printStackTrace();
 
                 }
-                searchadapter = new ArrayAdapter<ProductSearchModel>(HomeActivity.this, android.R.layout.simple_list_item_1, productLists);
+                searchadapter = new ArrayAdapter<ProductSearchModel>(HomeActivity.this, R.layout.spinner_item, productLists);
                 searchView.setAdapter(searchadapter);
                 // searchView.showDropDown();
 
@@ -1701,15 +1701,14 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         });
         mRequestQueue.add(mStringRequest);
     }
-
-
     @Override
     public void onResume() {
         super.onResume();
+
         if (CommanMethod.isInternetConnected(HomeActivity.this)) {
             CommanClass.getCartValue(this, number);
         }
-
+        CommanClass.addCustomView(context,HomeActivity.navView,HomeActivity.cartCountTextView);
 
         boolean isSignOut = true;
 

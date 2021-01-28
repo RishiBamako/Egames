@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.rginfotech.egames.HomeActivity;
 import com.rginfotech.egames.ProductDetailsActivity;
 import com.rginfotech.egames.R;
 import com.rginfotech.egames.RoundedTransformation;
@@ -78,6 +80,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         this.context = ctx;
         this.textView = textView;
         this.isThisFromWishList = isThisFromWishList;
+        sessionManager = new SessionManager(ctx);
+
     }
 
     @Override
@@ -121,7 +125,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             holder.offerPrice_text_view.setVisibility(View.GONE);
 
         }
-        sessionManager.setCountryCode(productLists.get(position).getCurrent_currency());
+        if (productLists.size() > 0) {
+            String currency_code = productLists.get(0).getCurrent_currency();
+            if (!TextUtils.isEmpty(currency_code)) {
+                sessionManager.setCountryCode(currency_code);
+            }
+        }
         if (productLists.get(position).getQuantity().equals("0")) {
             holder.instockTextViewId.setText(context.getString(R.string.out_of_stock));
         } else {
@@ -418,6 +427,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             @Override
             public void onResponse(String response) {
                 try {
+                    CommanClass.addCustomView(context, HomeActivity.navView, HomeActivity.cartCountTextView);
                     dialog.dismiss();
                     JSONObject object = new JSONObject(response);
                     String status = object.getString("status");
