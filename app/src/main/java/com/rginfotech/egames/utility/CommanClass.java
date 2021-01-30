@@ -1,12 +1,8 @@
 package com.rginfotech.egames.utility;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,8 +10,6 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rginfotech.egames.HomeActivity;
 import com.rginfotech.egames.R;
@@ -30,7 +24,6 @@ import java.util.Map;
 
 public class CommanClass {
 
-    public static TextView badgeTextView;
     private Context context;
     private int total_value;
     private String total_count = "";
@@ -108,7 +101,7 @@ public class CommanClass {
 
     }
 
-    public static void getCartValue_home(final Context context, BottomNavigationView navView,View view) {
+    public static void getCartValue_home(final Context context, BottomNavigationView navView, View view) {
         RequestQueue mRequestQueue = Volley.newRequestQueue(context);
         StringRequest mStringRequest = new StringRequest(Request.Method.POST, API.BASE_URL + "usercart", new com.android.volley.Response.Listener<String>() {
             @Override
@@ -121,30 +114,16 @@ public class CommanClass {
                         JSONObject jsonObject1 = new JSONObject(jsonObject.getString("usercart_Array"));
                         JSONArray jsonArray = new JSONArray(jsonObject1.getString("usercart"));
                         String totalcount = jsonObject1.optString("totalcount", "");
+
+                        HomeActivity.notificationsBadge.setText(totalcount);
                         if (totalcount.equals("0")) {
-                            if (badgeTextView != null && Utils.isFromDelete) {
-                                Utils.isFromDelete = false;
-                                View cart_badge = LayoutInflater.from(context)
-                                        .inflate(R.layout.cart_count_round_layout, navView, false);
-
-                                BottomNavigationMenuView mbottomNavigationMenuView = (BottomNavigationMenuView) navView.getChildAt(0);
-                                View view = mbottomNavigationMenuView.getChildAt(2);
-                                BottomNavigationItemView itemView = (BottomNavigationItemView) view;
-                                itemView.removeAllViews();
-                                itemView.addView(cart_badge);
-                            }
+                            HomeActivity.notificationsBadge.setVisibility(View.GONE);
                         } else {
-                            if (badgeTextView != null) {
-                                badgeTextView.setText(totalcount);
-                                badgeTextView.setVisibility(View.VISIBLE);
-                            }
+                            HomeActivity.notificationsBadge.setVisibility(View.VISIBLE);
                         }
-
                     } else {
-                        if (badgeTextView != null) {
-                            badgeTextView.setText("");
-                            badgeTextView.setVisibility(View.GONE);
-                        }
+                        HomeActivity.notificationsBadge.setVisibility(View.GONE);
+
                         //Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -192,14 +171,7 @@ public class CommanClass {
     }
 
     public static void addCustomView(Context context, BottomNavigationView navView, TextView cartCountTextView) {
-        BottomNavigationMenuView mbottomNavigationMenuView = (BottomNavigationMenuView) navView.getChildAt(0);
-        View view = mbottomNavigationMenuView.getChildAt(2);
-        BottomNavigationItemView itemView = (BottomNavigationItemView) view;
-        View cart_badge = LayoutInflater.from(context)
-                .inflate(R.layout.cart_count_round_layout, navView, false);
-        badgeTextView = cart_badge.findViewById(R.id.notificationsBadge);
-        CommanClass.getCartValue_home(context, navView,cart_badge);
-        itemView.addView(cart_badge);
+        CommanClass.getCartValue_home(context, navView, null);
     }
 
     public static String productType(Context context, String product_condition) {

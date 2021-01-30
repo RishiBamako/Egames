@@ -159,6 +159,8 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     private ImageLoader imageLoader;
     private AutoCompleteTextView searchView;
     private Context context;
+    public static TextView notificationsBadge;
+
 
     public void replaceFragment(Fragment fragment) {
 //        getSupportActionBar().hide();
@@ -272,6 +274,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
         filter_image = (ImageView) findViewById(R.id.filter_image);
         search_image = (ImageView) findViewById(R.id.search_image);
         linearLayout = (LinearLayout) findViewById(R.id.liner);
+        notificationsBadge = findViewById(R.id.notificationsBadge);
 
         /*FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
@@ -1310,7 +1313,6 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
                 categoryBrandListAdapter = new CategoryBrandListAdapter(HomeActivity.this, categoryBrandLists, bannerItem, banner_redirect);
                 categoryBrandLists_recycler.setAdapter(categoryBrandListAdapter);
-                // kdaImageViewId.setVisibility(View.VISIBLE);
 
                 if (bannerLists.size() > 0) {
                     banner_recycler.setVisibility(View.VISIBLE);
@@ -1318,6 +1320,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
                 } else {
                     banner_recycler.setVisibility(View.GONE);
                 }
+                //kdaImageViewId.setVisibility(View.VISIBLE);
 
             }
 
@@ -1326,6 +1329,7 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
             public void onErrorResponse(VolleyError error) {
                 //gifImageView.setVisibility(View.GONE);
                 dialog.dismiss();
+               // kdaImageViewId.setVisibility(View.GONE);
             }
         });
         mStringRequest.setRetryPolicy(new RetryPolicy() {
